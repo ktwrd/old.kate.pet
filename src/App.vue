@@ -16,6 +16,7 @@ export default {
 <style>
 body {
     background-color: black;
+    overflow-y: hidden;
 }
 #app {
     font-family: 'Avenir', Helvetica, Arial, sans-serif;

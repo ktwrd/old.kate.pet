@@ -12,9 +12,17 @@
   },
   "proxy": "dev.kate.pet",
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.36",
+    "@fortawesome/free-brands-svg-icons": "^5.15.4",
+    "@fortawesome/free-regular-svg-icons": "^5.15.4",
+    "@fortawesome/free-solid-svg-icons": "^5.15.4",
+    "@fortawesome/vue-fontawesome": "^2.0.6",
+    "bootstrap": "^4.6.1",
+    "bootstrap-vue": "^2.21.2",
     "butterchurn": "^2.6.7",
     "butterchurn-presets": "^2.4.7",
     "vue": "^2.5.2",
+    "vue-fontawesome": "^0.0.2",
     "vue-router": "^3.0.1"
   },
   "devDependencies": {
