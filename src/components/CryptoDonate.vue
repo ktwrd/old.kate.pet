@@ -28,8 +28,6 @@
 
 </style>
 <script>
-import { defineComponent } from '@vue/composition-api'
-
 export default {
     name: 'CryptoDonate',
     data () {
@@ -41,18 +39,31 @@ export default {
                 },
                 {
                     type: 'eth',
-                    address: '',
+                    address: '0xB02b4bC73624efE066Cff74128E54a01933660ff',
                 },
                 {
                     type: 'xmr',
-                    address: ''
+                    address: '4AedSHZZuuoFVmyyqgPGPSTpQWyZ8RvHSQKcRY7AowiDcx8sWqbvBi4ZqjtXzDywMT5B3vjE5jDN2U2mURp4RXTe6ad4FkY'
                 },
                 {
-                    type: 'eth',
-                    address: ''
+                    type: 'btc',
+                    address: 'bc1qw5jj93fj5p5p3v54h83cs5qudlyvp896sf25pr'
                 },
                 {
-                    
+                    type: 'rvn',
+                    address: 'RT1mE2dH4zDEXt8Pm1q3tKYWZDfKFckXvz'
+                },
+                {
+                    type: 'doge',
+                    address: 'DG2XPh9w5xFXTwnTzevuN6xfUi7wPMsqFk'
+                },
+                {
+                    type: 'usdc',
+                    address: '0xB02b4bC73624efE066Cff74128E54a01933660ff'
+                },
+                {
+                    type: 'usdt',
+                    address: '0xB02b4bC73624efE066Cff74128E54a01933660ff'
                 }
             ]
         }
