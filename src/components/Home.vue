@@ -6,28 +6,54 @@
                     <visualizer ref="vis" v-model="visualizer"/>
                 </template>
             </div>
-            <div class="visualizerControls">
-                <input
-                    type="range"
-                    min="0"
-                    max="1024"
-                    step="0.1"
-                    :value="volume"
-                    @change="ChangeAudioValue"
-                    ref="volume" />
-                <input
-                    type="button"
-                    @click="ToggleAudio"
-                    v-bind:value="IsPlaying() ? 'Pause' : 'Play'"/>
-                <button
-                    @click="SelectNewRandomAudio()">
-                    New Song
-                </button>
+            <div class="visualizerControls container">
+                <b-row>
+                    <b-col>
+                        <input
+                            type="range"
+                            min="0"
+                            max="1024"
+                            step="0.1"
+                            :value="volume"
+                            @change="ChangeAudioValue"
+                            ref="volume" />
+                        <input
+                            type="button"
+                            @click="ToggleAudio"
+                            v-bind:value="IsPlaying() ? 'Pause' : 'Play'"/>
+                        <button
+                            @click="SelectNewRandomAudio()">
+                            New Song
+                        </button>
+                    </b-col>
+                </b-row>
+                <b-row>
+                    <b-col>
+                        <code style="background-color: black; color: white;">
+                            {{ audioObject !== null && audioObject.name !== null ? audioObject.name : 'no track playing' }}
+                        </code>
+                    </b-col>
+                </b-row>
             </div>
         </template>
+        <b-tabs pills align="center" content-class="mt-3">
+            <template v-for="link in PageLinks">
+                <b-tab role="presentation" :href="link.location" class="LinkTab" @click="PageRedirect" name="discord" v-bind:key="link.type[1]" :style="{'--color': link.color, '--color-hover': link.colorhover}">
+                    <template #title>
+                        {{link.type}}
+                    </template>
+                </b-tab>
+            </template>
+        </b-tabs>
     </div>
 </template>
 <style scoped>
+.tabs {
+    width: fit-content;
+    margin: auto;
+    width: 50%;
+    margin-top: 30px;
+}
 .backgroundElement {
     position: fixed;
     top: 0;
@@ -44,6 +70,15 @@
     opacity: 0.2;
     filter: blur(10px);
     transition: 300ms;
+}
+.LinkTab {
+    color: var(--color);
+    transition: 200ms;
+}
+.LinkTab:hover {
+    color: var(--color-hover);
+    transition: 200ms;
+    cursor: pointer;
 }
 </style>
 <script>
@@ -73,7 +108,33 @@ export default {
             autoplay: localStorage.AudioAutoplay === 'true' ? true : false,
             visualizerComponent: true,
             visualizer: null,
-            enableVisualizer: localStorage.Visualizer === 'true' ? true : false
+            enableVisualizer: localStorage.Visualizer === 'true' ? true : false,
+            PageLinks: [
+                {
+                    type: 'home',
+                    color: '#4c4c4c',
+                    colorhover: '#4c4c4c',
+                    location: 'https://kate.pet'
+                },
+                {
+                    type: 'discord',
+                    color: '#7289DA',
+                    colorhover: '#586bad',
+                    location: 'https://discord.gg/GPjpzRvpSp'
+                },
+                {
+                    type: 'github',
+                    color: '#7289DA',
+                    colorhover: '#586bad',
+                    location: 'https://github.com/ktwrd'
+                },
+                {
+                    type: 'twitter',
+                    color: '#7289DA',
+                    colorhover: '#586bad',
+                    location: 'https://twitter.com/seedvevo'
+                }
+            ]
         };
     },
     mounted () {
@@ -82,6 +143,9 @@ export default {
         }
     },
     methods: {
+        PageRedirect (event) {
+
+        },
         ChangeAudioValue () {
             this.volume = this.$refs.volume.value;
             localStorage.AudioVolume = this.$refs.volume.value / 1024;
