@@ -12,6 +12,10 @@
                 :value="volume"
                 @change="ChangeAudioValue"
                 ref="volume" />
+            <button
+                @click="ToggleAudio">
+                Play/Pause
+            </button>
         </div>
     </div>
 </template>
@@ -42,6 +46,7 @@ export default {
     data () {
         return {
             audioURL: 'http://res.kate.pet/pageaudio/bitmap_fantasy.mp3',
+            audioObject: null,
             subtitle: '',
             volume: 0.0
         };
@@ -55,6 +60,9 @@ export default {
             this.volume = this.$refs.volume.value;
             this.$refs.vis.setVolume(this.$refs.volume.value / 1024);
             console.log(this.$refs.vis.volumeNode.value, this.$refs.volume.value / 1024);
+        },
+        ToggleAudio () {
+            this.$refs.vis.playpause();
         }
     }
 };
