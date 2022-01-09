@@ -10,6 +10,7 @@
     "lint": "eslint --ext .js,.vue src",
     "build": "node build/build.js"
   },
+  "proxy": "dev.kate.pet",
   "dependencies": {
     "butterchurn": "^2.6.7",
     "butterchurn-presets": "^2.4.7",
