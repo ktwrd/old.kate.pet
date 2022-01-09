@@ -36,9 +36,6 @@ export default {
     watch: {
         audioURL (value) {
             this.audioURL = value;
-        },
-        volume () {
-
         }
     },
     data () {
@@ -64,12 +61,17 @@ export default {
             presets: presets,
             volume: 0.2,
             playPosition: 0,
+            startPosition: 0,
             doRender: true,
             renderInterval: 1000 / 120,
             renderLoop: null,
             height: window.innerHeight,
             width: window.innerWidth,
-            volumeNode: null
+            volumeNode: null,
+
+            playing: false,
+
+            enable: true
         };
     },
     mounted () {
@@ -82,10 +84,23 @@ export default {
         });
     },
     methods: {
+        playpause () {
+            if (!this.$data.enable) return;
+            if (this.$data.playing) {
+                this.$data.audioContext.suspend();
+                this.$data.playing = false;
+            } else {
+                this.$data.audioContext.resume();
+                this.$data.playing = true;
+            }
+            console.log(this.$data.playing);
+        },
         setPreset (name, blend = this.$data.presetBlend) {
+            if (!this.$data.enable) return;
             this.$data.visualizer.loadPreset(this.$data.presets[name], blend);
         },
         createVisualizer () {
+            if (!this.$data.enable) return;
             window.AudioContext = window.AudioContext || window.webkitAudioContext || window.mozAudioContext;
 
             this.$refs.canvas.width = window.innerWidth;
@@ -96,23 +111,27 @@ export default {
                 width: 1600,
                 height: 900
             });
-            console.log(this.$data.visualizer);
+
             this.$data.visualizer.connectAudio(this.$data.source);
 
             this.$data.visualizer.loadPreset(presets[this.preset], this.$data.presetBlend);
 
-            this.$data.source.start(this.$data.playPosition);
+            this.playpause();
             this.$data.renderLoop = setInterval(() => {
-                if (this.$data.doRender) this.$data.visualizer.render();
+                if (!this.$data.playing) return;
+                if (!this.$data.doRender) return;
+                this.$data.visualizer.render();
             }, this.$data.renderInterval);
             setTimeout(() => {
                 this.$data.visualizer.setRendererSize(window.innerWidth, window.innerHeight);
             }, 100);
         },
         setVolume (value) {
+            if (!this.$data.enable) return;
             this.$data.volumeNode.gain.setValueAtTime(value, this.$data.audioContext.currentTime);
         },
         loadAudioFromURL (location) {
+            if (!this.$data.enable) return;
             try {
                 if (this.$data.audioContext == null) {
                     this.$data.audioContext = new AudioContext();
@@ -124,13 +143,12 @@ export default {
                 }
                 if (this.$data.source == null) {
                     this.$data.source = this.audioContext.createBufferSource();
-                } else {
-                    this.$data.source.stop();
                 }
 
                 // now retrieve some binary audio data from <audio>, ajax, input file or microphone and put it into a audio source object.
                 // here we will retrieve audio binary data via AJAX
                 var request = new XMLHttpRequest();
+                this.$data.audioURL = location;
                 request.open('GET', location);
                 request.responseType = 'arraybuffer'; // This asks the browser to populate the retrieved binary data in a array buffer
                 let self = this;
@@ -147,6 +165,7 @@ export default {
                 // now lets connect the audio source to a destination(hardware to play sound).
                 this.$data.source.connect(this.$data.volumeNode); // destination property is reference the default audio device
 
+                this.$data.source.start(0);
                 /*
                 If we wanted to add any audio nodes then we need to add them in between audio source and destionation anytime dynamically.
                 */
