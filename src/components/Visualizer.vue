@@ -6,6 +6,7 @@ canvas {
     margin: 0;
     padding: 0;
     display: block;
+    overflow: none;
 }
 </style>
 <script>
@@ -58,7 +59,8 @@ export default {
             playPosition: 0,
             startPosition: 0,
             doRender: true,
-            renderInterval: 1000 / 120,
+            // maximum 90fps
+            renderInterval: 1000 / 90,
             renderLoop: null,
             height: window.innerHeight,
             width: window.innerWidth,
@@ -166,7 +168,6 @@ export default {
                 width: 1600,
                 height: 900
             });
-            console.log(this.$data.visualizer);
 
             this.$data.visualizer.connectAudio(this.$data.source);
 
