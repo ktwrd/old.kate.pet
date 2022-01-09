@@ -1,10 +1,5 @@
 <template>
-    <canvas
-        ref='canvas'
-        v-bind:audioURL='audioURL'
-        v-bind:width='width'
-        v-bind:height='height'
-    />
+    <canvas ref='canvas' v-bind="canvas" v-bind:audioURL='audioURL' v-bind:width='width' v-bind:height='height' />
 </template>
 <style scoped>
 canvas {
@@ -30,9 +25,9 @@ var bcPresets = Object.assign({},
     ps5.getPresets(),
     ps6.getPresets());
 
-console.log(bcPresets);
 export default {
     name: 'Visualizer',
+    template: `<canvas ref='canvas' v-bind:audioURL='audioURL' v-bind:width='width' v-bind:height='height' />`,
     watch: {
         audioURL (value) {
             this.audioURL = value;
@@ -71,7 +66,9 @@ export default {
 
             playing: false,
 
-            enable: true
+            enable: true,
+
+            canvas: {}
         };
     },
     mounted () {
@@ -84,6 +81,65 @@ export default {
         });
     },
     methods: {
+        kill () {
+            if (this.$data.renderLoop !== null) {
+                clearInterval(this.$data.renderLoop);
+                this.$data.renderLoop = null;
+            }
+            if (this.$data.source !== null) {
+                this.$data.source.stop();
+                this.$data.source = null;
+            }
+            if (this.$data.volumeNode !== null) {
+                this.$data.volumeNode.disconnect();
+                this.$data.volumeNode = null;
+            }
+            if (this.$data.audioContext !== null) {
+                this.$data.audioContext.close();
+                this.$data.audioContext = null;
+            }
+            if (this.$data.visualizer !== null) {
+                this.$data.visualizer.audioNode.disconnect();
+                this.$data.visualizer = null;
+            }
+            this.$data.playing = false;
+        },
+        initialState () {
+            var presets = bcPresets;
+            if (this.audioURL !== undefined && this.audioURL !== null) {
+                this.loadAudioFromURL(this.audioURL);
+            }
+
+            return {
+                // preset: 'flexi - what is the matrix',
+                preset: 'suksma - heretical crosscut playpen',
+
+                // Number of seconds to blend presets
+                presetBlend: 0.0,
+
+                visualizer: null,
+
+                audioContext: null,
+                source: null,
+
+                audioURL: null,
+
+                presets: presets,
+                volume: 0.2,
+                playPosition: 0,
+                startPosition: 0,
+                doRender: true,
+                renderInterval: 1000 / 120,
+                renderLoop: null,
+                height: window.innerHeight,
+                width: window.innerWidth,
+                volumeNode: null,
+
+                playing: false,
+
+                enable: true
+            };
+        },
         playpause () {
             if (!this.$data.enable) return;
             if (this.$data.playing) {
@@ -93,7 +149,6 @@ export default {
                 this.$data.audioContext.resume();
                 this.$data.playing = true;
             }
-            console.log(this.$data.playing);
         },
         setPreset (name, blend = this.$data.presetBlend) {
             if (!this.$data.enable) return;
@@ -111,6 +166,7 @@ export default {
                 width: 1600,
                 height: 900
             });
+            console.log(this.$data.visualizer);
 
             this.$data.visualizer.connectAudio(this.$data.source);
 
