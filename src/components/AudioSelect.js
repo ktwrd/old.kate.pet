@@ -111,8 +111,28 @@ const data = [
     },
     {
         link: `https://www.youtube.com/watch?v=3hPfbnCSp3s`,
-        name: `t+pazolite - Cheatreal`,
+        name: `t+pazolite - Cheatreal #TPZREMAKE`,
         file: `cheatreal_tpzremake.mp3`
+    },
+    {
+        link: `https://www.youtube.com/watch?v=1qBWa6dWBRk`,
+        name: `Camellia - WYSI (When You See It)`,
+        file: `camellia-when_you_see_it.mp3`
+    },
+    {
+        link: `https://www.youtube.com/watch?v=5BlSQpejMTw`,
+        name: `t+pazolite - Chartreuse Green`,
+        file: `tpazolite-chartreuse_green.mp3`
+    },
+    {
+        link: `https://www.youtube.com/watch?v=OYtUWEdDmjI`,
+        name: `t+pazolite - Qlwa (Uncut Edition)`,
+        file: `tpazolite-qlwa_uncut.mp3`
+    },
+    {
+        link: `https://www.youtube.com/watch?v=Ppa42MWyMLk`,
+        name: `t+pazolite - Electric Butterfly`,
+        file: `tpazolite-electric_butterfly.mp3`
     }
 ];
 
