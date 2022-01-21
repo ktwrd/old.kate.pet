@@ -7,8 +7,18 @@
                 </template>
             </div>
             <div class="visualizerControls container">
-                <b-row>
+                <b-row row="auto">
                     <b-col>
+                        <div class="form form-horizontal">
+                        <template v-if="volume > 0.5">
+                            <b-icon icon="volume-up-fill" id="volumeIcon"/>
+                        </template>
+                        <template v-else-if="volume < 0.5 && volume > 0.001">
+                            <b-icon icon="volume-down-fill" id="volumeIcon"/>
+                        </template>
+                        <template v-else>
+                            <b-icon icon="volume-mute-fill" id="volumeIcon"/>
+                        </template>
                         <input
                             type="range"
                             min="0"
@@ -16,17 +26,27 @@
                             step="0.1"
                             :value="volume"
                             @change="ChangeAudioValue"
-                            ref="volume" />
-                        <input
+                            ref="volume"
+                            style="vertical-align: middle;"/>
+
+                        </div>
+                    </b-col>
+                </b-row>
+                <b-row>
+                    <b-col v-bind:playing="IsPlaying()">
+                        <b-button
                             ref="btn_PlayPause"
                             type="button"
-                            @click="ToggleAudio"
-                            v-bind:value="IsPlaying() ? 'Pause' : 'Play'"/>
-                        <button
+                            @click="ToggleAudio">
+
+                            {{ IsPlaying() ? 'Pause' : 'Play' }}
+
+                        </b-button>
+                        <b-button
                             ref="btn_NewSong"
                             @click="SelectNewRandomAudio()">
                             New Song
-                        </button>
+                        </b-button>
                     </b-col>
                 </b-row>
                 <b-row>
@@ -38,11 +58,18 @@
                 </b-row>
             </div>
         </template>
-        <b-tabs pills align="center" content-class="mt-3">
+        <b-tabs pills align="center" content-class="mt-3" active-nav-item-class="font-weight-bold cool-selected-tab">
             <template v-for="link in PageLinks">
-                <b-tab role="presentation" :location="link.location" class="LinkTab" @click="PageRedirect" name="discord" v-bind:key="link.type" :style="{'--color': link.color, '--color-hover': link.colorhover}">
+                <b-tab role="presentation" @click="PageRedirect" v-bind:key="link.type">
                     <template #title>
-                        {{link.type}}
+                        <span
+                            :location="link.location"
+                            class="LinkTab"
+                            :style="{'--color': link.color, '--color-hover': link.colorhover}"
+                            name="discord">
+
+                            {{link.type}}
+                        </span>
                     </template>
                 </b-tab>
             </template>
@@ -82,6 +109,20 @@
     transition: 200ms;
     cursor: pointer;
 }
+#volumeIcon {
+    color: #eee;
+    font-size: 3rem;
+    vertical-align: middle;
+}
+</style>
+<style>
+* {
+    transition: 300ms;
+}
+.cool-selected-tab {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+    border: 1px solid #fff;
+}
 </style>
 <script>
 import Visualizer from './Visualizer.vue';
@@ -115,32 +156,39 @@ export default {
             PageLinks: [
                 {
                     type: 'home',
-                    color: '#4c4c4c',
-                    colorhover: '#4c4c4c',
+                    color: '#dedede',
+                    colorhover: '#b58f8f',
                     location: '#/'
                 },
                 {
                     type: 'discord',
-                    color: '#7289DA',
-                    colorhover: '#586bad',
+                    color: '#5865F2',
+                    colorhover: '#e1e1e1',
                     location: 'https://discord.gg/GPjpzRvpSp'
                 },
                 {
                     type: 'github',
-                    color: '#7289DA',
-                    colorhover: '#586bad',
+                    color: '#8867b8',
+                    colorhover: '#e1e1e1',
                     location: 'https://github.com/ktwrd'
                 },
                 {
                     type: 'twitter',
-                    color: '#7289DA',
-                    colorhover: '#586bad',
+                    color: '#1DA1F2',
+                    colorhover: '#e1e1e1',
                     location: 'https://twitter.com/seedvevo'
+                },
+                {
+                    type: 'kofi',
+                    color: '#9d6538',
+                    colorhover: '#e1e1e1',
+                    location: 'https://ko-fi.com/seeeeeed'
                 }
             ]
         };
     },
     mounted () {
+        $(this.$refs.btn_NewSong).prop('disabled', true);
         if (this.$data.autoplay) {
             this.ToggleAudio();
         }
@@ -148,6 +196,7 @@ export default {
     methods: {
         PageRedirect (event) {
             console.log(event);
+            window.location = event.target.attributes.location.value;
         },
         ChangeAudioValue () {
             this.volume = this.$refs.volume.value;
@@ -162,13 +211,11 @@ export default {
             this.$refs.vis.playpause();
             this.$data.playing = this.$refs.vis.playing;
         },
-        SelectNewRandomAudio () {
+        async SelectNewRandomAudio () {
             this.$delete(this.$children, 0);
             this.$refs.vis.kill();
-            this.SelectRandomAudio();
-            setTimeout(() => {
-                this.ToggleAudio();
-            }, 200);
+            await this.SelectRandomAudio();
+            this.ToggleAudio();
         },
         IsPlaying () {
             if (this.$refs.vis === undefined) return false;
