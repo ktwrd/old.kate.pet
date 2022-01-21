@@ -38,7 +38,7 @@
         </template>
         <b-tabs pills align="center" content-class="mt-3">
             <template v-for="link in PageLinks">
-                <b-tab role="presentation" :href="link.location" class="LinkTab" @click="PageRedirect" name="discord" v-bind:key="link.type[1]" :style="{'--color': link.color, '--color-hover': link.colorhover}">
+                <b-tab role="presentation" :location="link.location" class="LinkTab" @click="PageRedirect" name="discord" v-bind:key="link.type" :style="{'--color': link.color, '--color-hover': link.colorhover}">
                     <template #title>
                         {{link.type}}
                     </template>
@@ -114,7 +114,7 @@ export default {
                     type: 'home',
                     color: '#4c4c4c',
                     colorhover: '#4c4c4c',
-                    location: 'https://kate.pet'
+                    location: '#/'
                 },
                 {
                     type: 'discord',
@@ -144,7 +144,7 @@ export default {
     },
     methods: {
         PageRedirect (event) {
-
+            console.log(event);
         },
         ChangeAudioValue () {
             this.volume = this.$refs.volume.value;
