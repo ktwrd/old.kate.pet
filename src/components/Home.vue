@@ -18,10 +18,12 @@
                             @change="ChangeAudioValue"
                             ref="volume" />
                         <input
+                            ref="btn_PlayPause"
                             type="button"
                             @click="ToggleAudio"
                             v-bind:value="IsPlaying() ? 'Pause' : 'Play'"/>
                         <button
+                            ref="btn_NewSong"
                             @click="SelectNewRandomAudio()">
                             New Song
                         </button>
@@ -85,6 +87,7 @@
 import Visualizer from './Visualizer.vue';
 
 const AudioSelect = require('./AudioSelect');
+const $ = require('jquery');
 
 export default {
     name: 'Home',
@@ -171,15 +174,19 @@ export default {
             if (this.$refs.vis === undefined) return false;
             return this.$refs.vis.$data.playing;
         },
-        SelectRandomAudio () {
+        async SelectRandomAudio () {
+            $(this.$refs.btn_NewSong).prop('disabled', true);
+            $(this.$refs.btn_PlayPause).prop('disabled', true);
             if (this.$refs.vis.playing) {
                 this.$refs.vis.playpause();
             }
             this.$data.audioObject = AudioSelect.select();
             this.$data.audioURL = this.$data.audioObject.url;
-            this.$refs.vis.loadAudioFromURL(this.$data.audioURL);
+            await this.$refs.vis.loadAudioFromURL(this.$data.audioURL);
             this.ChangeAudioValue(this.$data.volume);
             this.$refs.vis.playpause();
+            $(this.$refs.btn_NewSong).prop('disabled', false);
+            $(this.$refs.btn_PlayPause).prop('disabled', false);
         }
     }
 };
