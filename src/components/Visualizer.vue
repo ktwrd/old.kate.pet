@@ -189,49 +189,53 @@ export default {
         },
         loadAudioFromURL (location) {
             if (!this.$data.enable) return;
-            try {
-                if (this.$data.audioContext == null) {
-                    this.$data.audioContext = new AudioContext();
-                }
-                if (this.$data.volumeNode == null) {
-                    this.$data.volumeNode = this.$data.audioContext.createGain();
-                    this.$data.volumeNode.value = this.$data.volume;
-                    this.$data.volumeNode.connect(this.$data.audioContext.destination);
-                }
-                if (this.$data.source == null) {
-                    this.$data.source = this.audioContext.createBufferSource();
-                }
+            return new Promise((resolve, reject) => {
+                try {
+                    if (this.$data.audioContext == null) {
+                        this.$data.audioContext = new AudioContext();
+                    }
+                    if (this.$data.volumeNode == null) {
+                        this.$data.volumeNode = this.$data.audioContext.createGain();
+                        this.$data.volumeNode.value = this.$data.volume;
+                        this.$data.volumeNode.connect(this.$data.audioContext.destination);
+                    }
+                    if (this.$data.source == null) {
+                        this.$data.source = this.audioContext.createBufferSource();
+                    }
 
-                // now retrieve some binary audio data from <audio>, ajax, input file or microphone and put it into a audio source object.
-                // here we will retrieve audio binary data via AJAX
-                var request = new XMLHttpRequest();
-                this.$data.audioURL = location;
-                request.open('GET', location);
-                request.responseType = 'arraybuffer'; // This asks the browser to populate the retrieved binary data in a array buffer
-                let self = this;
-                request.onload = function () {
-                    // populate audio source from the retrieved binary data. This can be done using decodeAudioData function.
-                    // first parameter of decodeAudioData needs to be array buffer type. So from wherever you retrieve binary data make sure you get in form of array buffer type.
-                    self.$data.audioContext.decodeAudioData(request.response, function (buffer) {
-                        self.$data.source.buffer = buffer;
-                    });
-                };
-                request.send();
+                    // now retrieve some binary audio data from <audio>, ajax, input file or microphone and put it into a audio source object.
+                    // here we will retrieve audio binary data via AJAX
+                    var request = new XMLHttpRequest();
+                    this.$data.audioURL = location;
+                    request.open('GET', location);
+                    request.responseType = 'arraybuffer'; // This asks the browser to populate the retrieved binary data in a array buffer
+                    let self = this;
+                    request.onload = function () {
+                        // populate audio source from the retrieved binary data. This can be done using decodeAudioData function.
+                        // first parameter of decodeAudioData needs to be array buffer type. So from wherever you retrieve binary data make sure you get in form of array buffer type.
+                        self.$data.audioContext.decodeAudioData(request.response, function (buffer) {
+                            self.$data.source.buffer = buffer;
+                        });
+                    };
+                    request.send();
 
-                // now we got context, audio source.
-                // now lets connect the audio source to a destination(hardware to play sound).
-                this.$data.source.connect(this.$data.volumeNode); // destination property is reference the default audio device
+                    // now we got context, audio source.
+                    // now lets connect the audio source to a destination(hardware to play sound).
+                    this.$data.source.connect(this.$data.volumeNode); // destination property is reference the default audio device
 
-                this.$data.source.start(0);
-                /*
-                If we wanted to add any audio nodes then we need to add them in between audio source and destionation anytime dynamically.
-                */
-                setTimeout(() => {
-                    this.createVisualizer();
-                }, 150);
-            } catch (e) {
-                console.error(e);
-            }
+                    this.$data.source.start(0);
+                    /*
+                    If we wanted to add any audio nodes then we need to add them in between audio source and destionation anytime dynamically.
+                    */
+                    setTimeout(() => {
+                        this.createVisualizer();
+                        resolve();
+                    }, 150);
+                } catch (e) {
+                    console.error(e);
+                    reject(e);
+                }
+            });
         }
     }
 };
