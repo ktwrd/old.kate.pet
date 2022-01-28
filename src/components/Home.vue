@@ -58,7 +58,18 @@
                 </b-row>
             </div>
         </template>
-        <b-tabs pills align="center" content-class="mt-3" active-nav-item-class="font-weight-bold cool-selected-tab">
+        <ul class="links">
+            <template v-for="link in PageLinks">
+                <li v-bind:key="link.type">
+                    <img :src="`http://res.kate.pet/image/links/${link.type}.png`"
+                        @click="PageRedirect"
+                        :location="link.location"
+                        class="LinkTab"
+                        name="discord" />
+                </li>
+            </template>
+        </ul>
+        <!-- <b-tabs pills align="center" content-class="mt-3" active-nav-item-class="font-weight-bold cool-selected-tab">
             <template v-for="link in PageLinks">
                 <b-tab role="presentation" @click="PageRedirect" v-bind:key="link.type">
                     <template #title>
@@ -73,7 +84,7 @@
                     </template>
                 </b-tab>
             </template>
-        </b-tabs>
+        </b-tabs> -->
     </div>
 </template>
 <style scoped>
@@ -113,6 +124,45 @@
     color: #eee;
     font-size: 3rem;
     vertical-align: middle;
+}
+img.LinkTab {
+	border: 2px solid rgb(109, 109, 109);
+	height: 71px;
+	width: 200px;
+
+	-webkit-transition: 0.4s;
+			transition: 0.4s;
+	-webkit-filter: brightness(75%) grayscale(100%) sepia(10%);
+			filter: brightness(75%) grayscale(100%) sepia(10%);
+}
+img.LinkTab:hover {
+	border: 2px outset rgba(255,90,120,.7);
+
+    cursor: pointer;
+    -webkit-transition: 0.2s;
+    transition: 0.2s;
+    -webkit-filter: brightness(100%) grayscale(0%) sepia(0%) hue-rotate(360deg) saturate(130%) contrast(1);
+    filter: brightness(100%) grayscale(0%) sepia(0%) hue-rotate(360deg) saturate(130%) contrast(1);
+}
+ul.links {
+	display:block;
+	background-color: rgba(0,0,0,0.6);
+	height: 71px;
+    margin: 6px;
+}
+ul.links li {
+	vertical-align: top;
+	width: 200px;
+	height: 71px;
+    margin: 4px;
+    padding: 2px;
+}
+ul.links,
+ul.links li {
+    display: inline;
+    margin: none;
+    padding: 0;
+    list-style: none;
 }
 </style>
 <style>
@@ -155,12 +205,6 @@ export default {
             enableVisualizer: localStorage.Visualizer === 'true' ? true : false,
             PageLinks: [
                 {
-                    type: 'home',
-                    color: '#dedede',
-                    colorhover: '#b58f8f',
-                    location: '#/'
-                },
-                {
                     type: 'discord',
                     color: '#5865F2',
                     colorhover: '#e1e1e1',
@@ -177,13 +221,13 @@ export default {
                     color: '#1DA1F2',
                     colorhover: '#e1e1e1',
                     location: 'https://twitter.com/seedvevo'
-                },
+                }/* ,
                 {
                     type: 'kofi',
                     color: '#9d6538',
                     colorhover: '#e1e1e1',
                     location: 'https://ko-fi.com/seeeeeed'
-                }
+                } */
             ]
         };
     },
