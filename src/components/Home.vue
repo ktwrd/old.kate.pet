@@ -103,6 +103,7 @@
     padding: 0;
     width: 100vw;
     height: 100vh;
+    background: #000 !important;
 }
 .backgroundElement[type=visualizer] canvas {
     margin: 0;
