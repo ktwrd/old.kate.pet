@@ -12,6 +12,7 @@
                 <li><a href="https://heckscaper.com/"><img src="~@/assets/emma8831.gif" /></a></li>
                 <li><a href="https://lapfoxtrax.com/"><img src="~@/assets/lapfoxgrad.gif" /></a></li>
                 <li><a href="https://nikutrax.neocities.org/"><img src="~@/assets/niku.png" /></a></li>
+                <li><img src="~@/assets/pride.gif" /></li>
             </ul>
         </div>
     </div>
