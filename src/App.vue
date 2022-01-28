@@ -25,9 +25,9 @@ export default {
 </script>
 
 <style>
-html {
-    background: rgb(0, 0, 0) !important;
-    background-color: #000 !important;
+html,
+#app {
+    background: rgba(0, 0, 0, 0) !important;
 }
 img {
     image-rendering: auto;
