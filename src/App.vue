@@ -3,6 +3,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <header-icon />
         <router-view/>
+        <img src="https://kate.pet/button.gif" />
         <div class="eightbuttons">
             <ul>
                 <li><a href="https://kernel.org"><img src="~@/assets/CGG_big.gif" /></a></li>
