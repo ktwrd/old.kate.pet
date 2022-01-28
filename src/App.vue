@@ -25,6 +25,9 @@ export default {
 </script>
 
 <style>
+html {
+    background: #000;
+}
 html,
 #app {
     background: rgba(0, 0, 0, 0) !important;
