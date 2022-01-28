@@ -126,17 +126,17 @@
     vertical-align: middle;
 }
 img.LinkTab {
-	border: 2px solid rgb(109, 109, 109);
-	height: 71px;
-	width: 200px;
+    border: 2px solid rgb(109, 109, 109);
+    height: 71px;
+    width: 200px;
 
-	-webkit-transition: 0.4s;
-			transition: 0.4s;
-	-webkit-filter: brightness(75%) grayscale(100%) sepia(10%);
-			filter: brightness(75%) grayscale(100%) sepia(10%);
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+    -webkit-filter: brightness(75%) grayscale(100%) sepia(10%);
+    filter: brightness(75%) grayscale(100%) sepia(10%);
 }
 img.LinkTab:hover {
-	border: 2px outset rgba(255,90,120,.7);
+    border: 2px outset rgba(255,90,120,.7);
 
     cursor: pointer;
     -webkit-transition: 0.2s;
@@ -145,15 +145,15 @@ img.LinkTab:hover {
     filter: brightness(100%) grayscale(0%) sepia(0%) hue-rotate(360deg) saturate(130%) contrast(1);
 }
 ul.links {
-	display:block;
-	background-color: rgba(0,0,0,0.6);
-	height: 71px;
+    display:block;
+    background-color: rgba(0,0,0,0.6);
+    height: 71px;
     margin: 6px;
 }
 ul.links li {
-	vertical-align: top;
-	width: 200px;
-	height: 71px;
+    vertical-align: top;
+    width: 200px;
+    height: 71px;
     margin: 4px;
     padding: 2px;
 }
