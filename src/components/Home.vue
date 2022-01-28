@@ -61,7 +61,7 @@
         <ul class="links">
             <template v-for="link in PageLinks">
                 <li v-bind:key="link.type">
-                    <img :src="`http://res.kate.pet/image/links/${link.type}.png`"
+                    <img :src="`https://res.kate.pet/image/links/${link.type}.png`"
                         @click="PageRedirect"
                         :location="link.location"
                         class="LinkTab"

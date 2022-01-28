@@ -15,12 +15,12 @@ export default {
     name: 'HeaderIcon',
     data () {
         return {
-            filename: `http://res.kate.pet/image/${items[Math.floor(Math.random() * items.length)]}`
+            filename: `https://res.kate.pet/image/${items[Math.floor(Math.random() * items.length)]}`
         };
     },
     methods: {
         fallbackimage () {
-            this.$refs.image.attributes.src.value = 'http://res.kate.pet/image/petpet.gif';
+            this.$refs.image.attributes.src.value = 'https://res.kate.pet/image/petpet.gif';
         }
     }
 };
