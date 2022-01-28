@@ -28,6 +28,7 @@ export default {
 html,
 #app {
     background: rgba(0, 0, 0, 0) !important;
+    background-color: rgba(0, 0, 0, 0) !important;
 }
 img {
     image-rendering: auto;
