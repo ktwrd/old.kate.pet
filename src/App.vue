@@ -26,7 +26,7 @@ export default {
 
 <style>
 html {
-    background: #000;
+    background: #000 !important;
 }
 html,
 #app {
