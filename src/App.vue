@@ -25,6 +25,10 @@ export default {
 </script>
 
 <style>
+html {
+    background: rgb(0, 0, 0) !important;
+    background-color: #000 !important;
+}
 img {
     image-rendering: auto;
     image-rendering: crisp-edges;
