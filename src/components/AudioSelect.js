@@ -140,7 +140,7 @@ module.exports = {
     data,
     select: () => {
         let target = data[Math.floor(Math.random() * data.length)];
-        target.url = `http://res.kate.pet/pageaudio/${target.file}`;
+        target.url = `https://res.kate.pet/pageaudio/${target.file}`;
         return target;
     }
 };
