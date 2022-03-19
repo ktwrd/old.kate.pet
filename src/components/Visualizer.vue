@@ -26,6 +26,8 @@ var bcPresets = Object.assign({},
     ps5.getPresets(),
     ps6.getPresets());
 
+bcPresets['Eo.S. + Phat - chasers 18 hallway'] = require('./milkdrop-preset.json');
+
 export default {
     name: 'Visualizer',
     template: `<canvas ref='canvas' v-bind:audioURL='audioURL' v-bind:width='width' v-bind:height='height' />`,
@@ -42,7 +44,7 @@ export default {
 
         return {
             // preset: 'flexi - what is the matrix',
-            preset: 'suksma - heretical crosscut playpen',
+            preset: 'Eo.S. + Phat - chasers 18 hallway',
 
             // Number of seconds to blend presets
             presetBlend: 0.0,
@@ -114,7 +116,7 @@ export default {
 
             return {
                 // preset: 'flexi - what is the matrix',
-                preset: 'suksma - heretical crosscut playpen',
+                preset: 'Eo.S. + Phat - chasers 18 hallway',
 
                 // Number of seconds to blend presets
                 presetBlend: 0.0,
