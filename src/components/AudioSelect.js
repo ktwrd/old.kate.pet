@@ -133,6 +133,16 @@ const data = [
         link: `https://www.youtube.com/watch?v=Ppa42MWyMLk`,
         name: `t+pazolite - Electric Butterfly`,
         file: `tpazolite-electric_butterfly.mp3`
+    },
+    {
+        link: `https://www.last.fm/music/Lzie/_/Don%27t+Go+Floor`,
+        name: `Lzie - Don't Go Floor`,
+        file: `lzie-dontgofloor.mp3`
+    },
+    {
+        link: `https://www.youtube.com/watch?v=9fIlAsMREpg`,
+        name: `The Queenstons - no more forever`,
+        file: `thequeenstons-nomoreforever.mp3`
     }
 ];
 
