@@ -249,9 +249,11 @@ export default {
             this.$refs.vis.setVolume(this.$refs.volume.value / 1024);
             this.$refs.volume.value = this.$refs.volume.value / 1024;
         },
-        ToggleAudio () {
+        async ToggleAudio () {
             if (this.$refs.vis.visualizer == null) {
-                this.SelectRandomAudio();
+                await this.SelectRandomAudio();
+                this.$refs.vis.playpause();
+                this.$refs.vis.playpause();
             }
             this.$refs.vis.playpause();
             this.$data.playing = this.$refs.vis.playing;
