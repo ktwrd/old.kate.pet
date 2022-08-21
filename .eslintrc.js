@@ -29,6 +29,7 @@ module.exports = {
     'indent': ['error', 4],
     'semi': ['error', 'always'],
     'no-unneeded-ternary': 0,
-    'import/first': 0
+    'import/first': 0,
+    'no-inner-declarations': 0
   }
 }
