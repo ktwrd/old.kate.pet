@@ -1,4 +1,5 @@
 module.exports = [
     'petpet.gif',
-    'ellort.png'
+    'doompog.png'
+    // 'ellort.png'
 ];
