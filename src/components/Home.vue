@@ -1,5 +1,6 @@
 <template>
     <div>
+        <other-links-modal ref="otherLinks" />
         <template v-if="enableVisualizer">
             <div class="backgroundElement" type="visualizer">
                 <template v-if="visualizerComponent">
@@ -61,11 +62,19 @@
         <ul class="links">
             <template v-for="link in PageLinks">
                 <li v-bind:key="link.type">
-                    <img :src="`https://res.kate.pet/image/links/${link.type}.png`"
-                        @click="PageRedirect"
-                        :location="link.location"
-                        class="LinkTab"
-                        name="discord" />
+                    <template v-if="typeof link.location == 'function'">
+                        <img :src="`https://res.kate.pet/image/links/${link.type}.png`"
+                            @click="link.location"
+                            class="LinkTab"
+                            name="placeholder" />
+                    </template>
+                    <template v-else>
+                        <img :src="`https://res.kate.pet/image/links/${link.type}.png`"
+                            @click="PageRedirect"
+                            :location="link.location"
+                            class="LinkTab"
+                            name="placeholder" />
+                    </template>
                 </li>
             </template>
         </ul>
@@ -176,6 +185,7 @@ ul.links li {
 }
 </style>
 <script>
+import OtherLinksModal from './OtherLinksModal.vue';
 import Visualizer from './Visualizer.vue';
 
 const AudioSelect = require('./AudioSelect');
@@ -183,7 +193,7 @@ const $ = require('jquery');
 
 export default {
     name: 'Home',
-    components: {Visualizer},
+    components: {Visualizer, OtherLinksModal},
     data () {
         if (localStorage.AudioVolume === undefined) {
             localStorage.AudioVolume = 0.3;
@@ -222,6 +232,14 @@ export default {
                     color: '#1DA1F2',
                     colorhover: '#e1e1e1',
                     location: 'https://twitter.com/seedvevo'
+                },
+                {
+                    type: 'other_shirt',
+                    color: '#ffffff',
+                    colorhover: '#ffffff',
+                    location: () => {
+                        this.$refs.otherLinks.showModal()
+                    }
                 }/* ,
                 {
                     type: 'kofi',

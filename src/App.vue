@@ -69,7 +69,7 @@ img {
 }
 .eightbuttons {
     position: absolute;
-    bottom: 15px;
+    bottom: 0.1rem;
     left: 0;
     width: 100vw;
     text-align: center;
@@ -87,6 +87,7 @@ img {
 .eightbuttons ul {
     display: inline-block;
     max-width: 80vw;
+    margin-bottom: 0.1rem;
 }
 body {
     background-color: black;
