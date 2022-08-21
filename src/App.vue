@@ -41,7 +41,8 @@ export default {
                 ['https://res.kate.pet/88x31/flag-trans.png'],
                 ['https://res.kate.pet/88x31/flag-pan.png'],
                 ['https://res.kate.pet/88x31/roly-saynotoweb3.gif', 'https://yesterweb.org/no-to-web3/'],
-                ['https://res.kate.pet/88x31/sauce-orangetext.png', 'https://developer.valvesoftware.com/wiki/Source']
+                ['https://res.kate.pet/88x31/sauce-orangetext.png', 'https://developer.valvesoftware.com/wiki/Source'],
+                ['https://res.kate.pet/88x31/cyberdog.gif']
             ]
         };
     }
