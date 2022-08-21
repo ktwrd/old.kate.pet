@@ -6,23 +6,45 @@
         <a href="https://kate.pet"><img src="https://kate.pet/button.gif" style="margin: 15px;" /></a>
         <div class="eightbuttons">
             <ul>
-                <li><a href="https://kernel.org"><img src="~@/assets/CGG_big.gif" /></a></li>
-                <li><a href="https://code.visualstudio.com/"><img src="~@/assets/vscbutton.gif" /></a></li>
-                <li><a href="https://exo.pet/"><img src="~@/assets/exopet_newbutton.gif" /></a></li>
-                <li><a href="https://heckscaper.com/"><img src="~@/assets/emma8831.gif" /></a></li>
-                <li><a href="https://lapfoxtrax.com/"><img src="~@/assets/lapfoxgrad.gif" /></a></li>
-                <li><a href="https://nikutrax.neocities.org/"><img src="~@/assets/niku.png" /></a></li>
-                <li><img src="~@/assets/pride.gif" /></li>
+                <template v-for="(item, index) in eightButtons">
+                    <li v-bind:key="`eightButton-${index}`">
+                        <template v-if="item[1] != undefined">
+                            <a :href="item[1]">
+                                <img :src="item[0]" />
+                            </a>
+                        </template>
+                        <template v-else>
+                        <img :src="item[0]" />
+                        </template>
+                    </li>
+                </template>
             </ul>
         </div>
     </div>
 </template>
-
 <script>
 import HeaderIcon from './components/HeaderIcon.vue';
 export default {
     components: { HeaderIcon },
-    name: 'App'
+    name: 'App',
+    data () {
+        return {
+            eightButtons: [
+                ['https://res.kate.pet/88x31/CGG_big.gif', 'https://kernel.org'],
+                ['https://res.kate.pet/88x31/vscode.gif', 'https://code.visualstudio.com'],
+                ['https://res.kate.pet/88x31/exopet_newbutton.gif', 'https://exo.pet'],
+                ['https://res.kate.pet/88x31/emma.gif', 'https://heckscaper.com'],
+                ['https://res.kate.pet/88x31/lapfoxgrad.gif', 'https://halleylabs.com'],
+                ['https://res.kate.pet/88x31/niku.png', 'https://nikutrax.neocities.org'],
+                ['https://res.kate.pet/88x31/pride.gif'],
+                ['https://res.kate.pet/88x31/sanya.png', 'https://sanya.gay'],
+                ['https://res.kate.pet/88x31/flag-trans.png'],
+                ['https://res.kate.pet/88x31/flag-pan.png'],
+                ['https://res.kate.pet/88x31/roly-saynotoweb3.gif', 'https://yesterweb.org/no-to-web3/'],
+                ['https://res.kate.pet/88x31/sauce-orangetext.png', 'https://developer.valvesoftware.com/wiki/Source']
+            ]
+        };
+    }
 };
 </script>
 
@@ -59,6 +81,10 @@ img {
     margin: none;
     padding: 0;
     list-style: none;
+}
+.eightbuttons ul {
+    display: inline-block;
+    max-width: 80vw;
 }
 body {
     background-color: black;
