@@ -72,7 +72,9 @@ export default {
 
             enable: true,
 
-            canvas: {}
+            canvas: {},
+
+            lockButton: false
         };
     },
     mounted () {
@@ -81,7 +83,9 @@ export default {
         window.addEventListener('resize', () => {
             self.$refs.canvas.width = window.innerWidth;
             self.$refs.canvas.height = window.innerHeight;
-            this.$data.visualizer.setRendererSize(window.innerWidth, window.innerHeight);
+            if (this.$data.visualizer != null) {
+                this.$data.visualizer.setRendererSize(window.innerWidth, window.innerHeight);
+            }
         });
     },
     methods: {
@@ -160,6 +164,7 @@ export default {
         },
         createVisualizer () {
             if (!this.$data.enable) return;
+            console.log('Created Visualizer');
             window.AudioContext = window.AudioContext || window.webkitAudioContext || window.mozAudioContext;
 
             this.$refs.canvas.width = window.innerWidth;
@@ -193,6 +198,7 @@ export default {
             if (!this.$data.enable) return;
             return new Promise((resolve, reject) => {
                 try {
+                    this.$set(this.$data, 'enable', false);
                     if (this.$data.audioContext == null) {
                         this.$data.audioContext = new AudioContext();
                     }
@@ -211,29 +217,29 @@ export default {
                     this.$data.audioURL = location;
                     request.open('GET', location);
                     request.responseType = 'arraybuffer'; // This asks the browser to populate the retrieved binary data in a array buffer
-                    let self = this;
-                    request.onload = function () {
+                    request.onload = () => {
                         // populate audio source from the retrieved binary data. This can be done using decodeAudioData function.
                         // first parameter of decodeAudioData needs to be array buffer type. So from wherever you retrieve binary data make sure you get in form of array buffer type.
-                        self.$data.audioContext.decodeAudioData(request.response, function (buffer) {
-                            self.$data.source.buffer = buffer;
+                        this.$data.audioContext.decodeAudioData(request.response, (buffer) => {
+                            this.$data.source.buffer = buffer;
                         });
+                        // now we got context, audio source.
+                        // now lets connect the audio source to a destination(hardware to play sound).
+                        this.$data.source.connect(this.$data.volumeNode); // destination property is reference the default audio device
+
+                        this.$data.source.start(0);
+                        /*
+                        If we wanted to add any audio nodes then we need to add them in between audio source and destionation anytime dynamically.
+                        */
+                        setTimeout(() => {
+                            this.$set(this.$data, 'enable', true);
+                            this.createVisualizer();
+                            resolve();
+                        }, 150);
                     };
                     request.send();
-
-                    // now we got context, audio source.
-                    // now lets connect the audio source to a destination(hardware to play sound).
-                    this.$data.source.connect(this.$data.volumeNode); // destination property is reference the default audio device
-
-                    this.$data.source.start(0);
-                    /*
-                    If we wanted to add any audio nodes then we need to add them in between audio source and destionation anytime dynamically.
-                    */
-                    setTimeout(() => {
-                        this.createVisualizer();
-                        resolve();
-                    }, 150);
                 } catch (e) {
+                    this.$set(this.$data, 'enable', true);
                     console.error(e);
                     reject(e);
                 }
