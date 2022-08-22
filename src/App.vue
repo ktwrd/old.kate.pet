@@ -44,7 +44,9 @@ export default {
                 ['https://res.kate.pet/88x31/sauce-orangetext.png', 'https://developer.valvesoftware.com/wiki/Source'],
                 ['https://res.kate.pet/88x31/cyberdog.gif'],
                 ['https://res.kate.pet/88x31/casey.png', 'https://caseys-corner.neocities.org'],
-                ['https://res.kate.pet/88x31/therian.png', 'https://otherkin.fandom.com/wiki/Therians']
+                ['https://res.kate.pet/88x31/therian.png', 'https://otherkin.fandom.com/wiki/Therians'],
+                ['https://88x31.kate.pet/rotteen.gif'],
+                ['https://88x31.kate.pet/redhat.gif']
             ]
         };
     }
