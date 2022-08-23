@@ -1,6 +1,12 @@
 <template>
     <div id="app">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <div style="position:fixed; top: 0;left:0;">
+            <b-button-group>
+                <b-button size="sm" to="/">Home</b-button>
+                <b-button size="sm" to="/other">Other</b-button>
+            </b-button-group>
+        </div>
         <router-view/>
     </div>
 </template>

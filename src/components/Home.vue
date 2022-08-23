@@ -238,7 +238,7 @@ export default {
                     color: '#ffffff',
                     colorhover: '#ffffff',
                     location: () => {
-                        this.$refs.otherLinks.showModal()
+                        window.location = '#/other'
                     }
                 }/* ,
                 {

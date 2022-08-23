@@ -73,7 +73,7 @@ export default {
 }
 .eightbuttons ul {
     display: inline-block;
-    max-width: 80vw;
+    max-width: 90vw;
     margin-bottom: 0.1rem;
 }
 
