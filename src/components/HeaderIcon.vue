@@ -1,10 +1,25 @@
 <template>
-    <img ref="image" :src="filename" @error="fallbackimage"/>
+    <div class="imageContainer">
+        <img ref="image" v-bind:src="filename" @error="fallbackimage" @click="generateFilename()"/>
+    </div>
 </template>
 
 <style scoped>
+.imageContainer {
+    height: 20vh;
+    margin-bottom: 1rem;
+}
 img {
-    height: 175px;
+    height: 100%;
+    transition: 50ms;
+}
+img:hover {
+    scale: 1.05;
+    transition: 50ms;
+}
+img:active {
+    scale: 0.95;
+    transition: 50ms;
 }
 </style>
 
@@ -21,6 +36,14 @@ export default {
     methods: {
         fallbackimage () {
             this.$refs.image.attributes.src.value = 'https://res.kate.pet/image/petpet.gif';
+        },
+        generateFilename () {
+            let content = this.$data.filename
+            while (content === this.$data.filename) {
+                content = `https://res.kate.pet/image/${items[Math.floor(Math.random() * items.length)]}`
+            }
+            this.$set(this.$data, 'filename', content)
+            return content
         }
     }
 };
