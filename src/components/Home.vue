@@ -1,6 +1,5 @@
 <template>
     <div>
-        <other-links-modal ref="otherLinks" />
         <template v-if="enableVisualizer">
             <div class="backgroundElement" type="visualizer">
                 <template v-if="visualizerComponent">
@@ -185,7 +184,6 @@ ul.links li {
 }
 </style>
 <script>
-import OtherLinksModal from './OtherLinksModal.vue';
 import Visualizer from './Visualizer.vue';
 
 const AudioSelect = require('./AudioSelect');
@@ -193,7 +191,7 @@ const $ = require('jquery');
 
 export default {
     name: 'Home',
-    components: {Visualizer, OtherLinksModal},
+    components: {Visualizer},
     data () {
         if (localStorage.AudioVolume === undefined) {
             localStorage.AudioVolume = 0.3;
