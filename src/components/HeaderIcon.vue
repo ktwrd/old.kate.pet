@@ -6,12 +6,19 @@
 
 <style scoped>
 .imageContainer {
-    height: 20vh;
+    height: 25vh;
     margin-bottom: 1rem;
+    display: flex;
+  justify-content: center;
 }
 img {
-    height: 100%;
+    object-fit: contain;
+    object-position: center;
+    max-width: min(400px, 80vw);
+    height: 25vh;
     transition: 50ms;
+    margin: auto;
+    display: block;
 }
 img:hover {
     scale: 1.05;
