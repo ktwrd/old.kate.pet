@@ -27,6 +27,7 @@ var bcPresets = Object.assign({},
     ps6.getPresets());
 
 bcPresets['Eo.S. + Phat - chasers 18 hallway'] = require('./milkdrop-preset.json');
+bcPresets['LuxXx - Makes Me Cry (five) (Makes Me Cry, So Lick My Tears, And Get Real High)'] = require('butterchurn-presets/presets/converted/LuxXx - Makes Me Cry (five) (Makes Me Cry, So Lick My Tears, And Get Real High).json')
 
 export default {
     name: 'Visualizer',
@@ -44,7 +45,7 @@ export default {
 
         return {
             // preset: 'flexi - what is the matrix',
-            preset: 'Eo.S. + Phat - chasers 18 hallway',
+            preset: 'LuxXx - Makes Me Cry (five) (Makes Me Cry, So Lick My Tears, And Get Real High)',
 
             // Number of seconds to blend presets
             presetBlend: 0.0,
