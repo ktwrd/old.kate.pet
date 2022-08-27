@@ -1,25 +1,29 @@
 <template>
     <div>
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <header-icon />
+        <template v-if="$route.name == 'blank'">
+            <header-icon />
+        </template>
         <home />
-        <a href="https://kate.pet" class="eightyeightthirtyone"><img src="https://kate.pet/button.gif" style="margin: 15px;" /></a>
-        <div class="eightbuttons">
-            <ul>
-                <template v-for="(item, index) in eightButtons">
-                    <li v-bind:key="`eightButton-${index}`">
-                        <template v-if="item[1] != undefined">
-                            <a :href="item[1]">
-                                <img :src="item[0]" />
-                            </a>
-                        </template>
-                        <template v-else>
-                        <img :src="item[0]" />
-                        </template>
-                    </li>
-                </template>
-            </ul>
-        </div>
+        <template v-if="$route.name == 'blank'">
+            <a href="https://kate.pet" class="eightyeightthirtyone"><img src="https://kate.pet/button.gif" style="margin: 15px;" /></a>
+            <div class="eightbuttons">
+                <ul>
+                    <template v-for="(item, index) in eightButtons">
+                        <li v-bind:key="`eightButton-${index}`">
+                            <template v-if="item[1] != undefined">
+                                <a :href="item[1]">
+                                    <img :src="item[0]" />
+                                </a>
+                            </template>
+                            <template v-else>
+                            <img :src="item[0]" />
+                            </template>
+                        </li>
+                    </template>
+                </ul>
+            </div>
+        </template>
     </div>
 </template>
 <script>
@@ -29,6 +33,7 @@ export default {
     components: { Home, HeaderIcon },
     name: 'LandingPage',
     data () {
+        console.log(this.$route)
         return {
             eightButtons: [
                 ['https://res.kate.pet/88x31/CGG_big.gif', 'https://kernel.org'],

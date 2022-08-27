@@ -6,7 +6,7 @@
                     <visualizer ref="vis" v-model="visualizer"/>
                 </template>
             </div>
-            <div class="visualizerControls container">
+            <div class="visualizerControls container" v-bind:notMainView="$route.name != 'blank' ? 'yes' : 'no'">
                 <b-row row="auto">
                     <b-col>
                         <div class="form form-horizontal">
@@ -58,25 +58,27 @@
                 </b-row>
             </div>
         </template>
-        <ul class="links">
-            <template v-for="link in PageLinks">
-                <li v-bind:key="link.type">
-                    <template v-if="typeof link.location == 'function'">
-                        <img :src="`https://res.kate.pet/image/links/${link.type}.png`"
-                            @click="link.location"
-                            class="LinkTab"
-                            name="placeholder" />
-                    </template>
-                    <template v-else>
-                        <img :src="`https://res.kate.pet/image/links/${link.type}.png`"
-                            @click="PageRedirect"
-                            :location="link.location"
-                            class="LinkTab"
-                            name="placeholder" />
-                    </template>
-                </li>
-            </template>
-        </ul>
+        <template v-if="$route.name == 'blank'">
+            <ul class="links">
+                <template v-for="link in PageLinks">
+                    <li v-bind:key="link.type">
+                        <template v-if="typeof link.location == 'function'">
+                            <img :src="`https://res.kate.pet/image/links/${link.type}.png`"
+                                @click="link.location"
+                                class="LinkTab"
+                                name="placeholder" />
+                        </template>
+                        <template v-else>
+                            <img :src="`https://res.kate.pet/image/links/${link.type}.png`"
+                                @click="PageRedirect"
+                                :location="link.location"
+                                class="LinkTab"
+                                name="placeholder" />
+                        </template>
+                    </li>
+                </template>
+            </ul>
+        </template>
         <!-- <b-tabs pills align="center" content-class="mt-3" active-nav-item-class="font-weight-bold cool-selected-tab">
             <template v-for="link in PageLinks">
                 <b-tab role="presentation" @click="PageRedirect" v-bind:key="link.type">
@@ -95,6 +97,17 @@
         </b-tabs> -->
     </div>
 </template>
+<style>
+.visualizerControls[notMainView=yes] {
+    top: 0;
+    position: absolute;
+    right: 0;
+    max-width: fit-content;
+}
+.visualizerControls {
+    transition: all 0.5s ease-out;
+}
+</style>
 <style scoped>
 .tabs {
     width: fit-content;

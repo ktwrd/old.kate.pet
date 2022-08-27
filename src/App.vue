@@ -7,13 +7,15 @@
                 <b-button variant="outline-secondary" style="border-top-right-radius:0;" size="sm" to="/other">Other</b-button>
             </b-button-group>
         </div>
+        <landing-page />
         <router-view/>
     </div>
 </template>
 <script>
+import LandingPage from './LandingPage.vue'
 import HeaderIcon from './components/HeaderIcon.vue';
 export default {
-    components: { HeaderIcon },
+    components: { HeaderIcon, LandingPage },
     name: 'App'
 };
 </script>
