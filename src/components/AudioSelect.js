@@ -143,6 +143,16 @@ const data = [
         link: `https://www.youtube.com/watch?v=9fIlAsMREpg`,
         name: `The Queenstons - no more forever`,
         file: `thequeenstons-nomoreforever.mp3`
+    },
+    {
+        link: `https://www.youtube.com/watch?v=6j18-JVmf7w`,
+        name: `Fox Stevenson - Enemy Brain`,
+        file: `foxstevenson-enemybrain.mp3`
+    },
+    {
+        link: `https://www.youtube.com/watch?v=4wmRs1R1ENQ`,
+        name: `BoxPlot - Escape With the Clouds (V.I.P)`,
+        file: `boxplot-escapewiththeclouds.mp3`
     }
 ];
 
