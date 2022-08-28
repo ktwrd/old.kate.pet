@@ -149,7 +149,7 @@ export default {
                 playPosition: 0,
                 startPosition: 0,
                 doRender: true,
-                renderInterval: 1000 / 120,
+                renderInterval: 1000 / 24,
                 renderLoop: null,
                 height: window.innerHeight,
                 width: window.innerWidth,
