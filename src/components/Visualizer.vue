@@ -41,6 +41,10 @@ export default {
                 alert(`Butterchurn is not supported on your platform ;w;`)
                 this.$set(this.$data, 'enabled', false)
             }
+        },
+        volume (target) {
+            if (this.$data.volumeNode != null) {
+                this.$set(this.$data.volumeNode, 'value', target);
             }
         }
     },
