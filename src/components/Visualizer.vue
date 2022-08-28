@@ -175,6 +175,10 @@ export default {
             this.$data.visualizer.loadPreset(this.$data.presets[name], blend);
         },
         createVisualizer () {
+            if (!isButterchurnSupported) {
+                alert(`Butterchurn is not supported on your platform ;w;`)
+                return;
+            }
             if (!this.$data.enable) return;
             console.log('Created Visualizer');
             window.AudioContext = window.AudioContext || window.webkitAudioContext || window.mozAudioContext;
