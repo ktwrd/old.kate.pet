@@ -35,6 +35,7 @@
                 <b-row>
                     <b-col v-bind:playing="IsPlaying()">
                         <b-button
+                            size="sm"
                             ref="btn_PlayPause"
                             type="button"
                             @click="ToggleAudio">
@@ -43,6 +44,7 @@
 
                         </b-button>
                         <b-button
+                            size="sm"
                             ref="btn_NewSong"
                             @click="SelectNewRandomAudio()">
                             New Song
