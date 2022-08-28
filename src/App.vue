@@ -9,7 +9,7 @@
             </b-button-group>
         </div>
         <landing-page />
-        <router-view/>
+        <div style="margin-top: 7rem;"><router-view/></div>
     </div>
 </template>
 <script>
@@ -48,6 +48,6 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-align: center;
-    margin-top: 60px;
+    margin-top: 1rem;
 }
 </style>
