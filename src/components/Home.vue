@@ -270,6 +270,24 @@ export default {
         }
     },
     methods: {
+        ClearSelection () {
+            var sel;
+            if ((sel = document.selection) && sel.empty) {
+                sel.empty();
+            } else {
+                if (window.getSelection) {
+                    window.getSelection().removeAllRanges();
+                }
+                var activeEl = document.activeElement;
+                if (activeEl) {
+                    var tagName = activeEl.nodeName.toLowerCase();
+                    if (tagName === 'textarea' || (tagName === 'input' && activeEl.type === 'text')) {
+                        // Collapse the selection to the end
+                        activeEl.selectionStart = activeEl.selectionEnd;
+                    }
+                }
+            }
+        },
         PageRedirect (event) {
             console.log(event);
             window.location = event.target.attributes.location.value;
@@ -278,9 +296,10 @@ export default {
             this.$set(this.$data, 'volume', this.$refs.volume.value);
             localStorage.AudioVolume = this.$refs.volume.value / 1024;
             this.$refs.vis.setVolume(this.$refs.volume.value / 1024);
-            this.$refs.volume.$set(this.$refs.volume, 'value', this.$refs.volume.value / 1024);
+            this.$refs.volume.value = this.$refs.volume.value / 1024;
         },
         async ToggleAudio () {
+            this.ClearSelection();
             if (this.$refs.vis.visualizer == null) {
                 await this.SelectRandomAudio();
                 this.$refs.vis.playpause();
@@ -290,6 +309,7 @@ export default {
             this.$set(this.$data, 'playing', this.$refs.vis.playing);
         },
         async SelectNewRandomAudio () {
+            this.ClearSelection();
             this.$delete(this.$children, 0);
             this.$refs.vis.kill();
             await this.SelectRandomAudio();
@@ -300,6 +320,7 @@ export default {
             return this.$refs.vis.$data.playing;
         },
         async SelectRandomAudio () {
+            this.ClearSelection();
             $(this.$refs.btn_NewSong).prop('disabled', true);
             $(this.$refs.btn_PlayPause).prop('disabled', true);
             if (this.$refs.vis.playing) {
