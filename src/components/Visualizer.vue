@@ -180,7 +180,7 @@ export default {
                 return;
             }
             if (!this.$data.enable) return;
-            console.log('Created Visualizer');
+            console.log('Created Visualizer', this.$data);
             window.AudioContext = window.AudioContext || window.webkitAudioContext || window.mozAudioContext;
 
             this.$refs.canvas.width = window.innerWidth;
