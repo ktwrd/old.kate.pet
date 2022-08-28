@@ -125,14 +125,14 @@ export default {
             this.$data.playing = false;
         },
         initialState () {
-            var presets = bcPresets;
             if (this.audioURL !== undefined && this.audioURL !== null) {
                 this.loadAudioFromURL(this.audioURL);
             }
 
             return {
-                // preset: 'flexi - what is the matrix',
-                preset: 'Eo.S. + Phat - chasers 18 hallway',
+                preset: 'flexi - what is the matrix',
+                // preset: 'LuxXx - Makes Me Cry (five) (Makes Me Cry, So Lick My Tears, And Get Real High)',
+                // preset: 'Eo.S. + Phat - chasers 18 hallway',
 
                 // Number of seconds to blend presets
                 presetBlend: 0.0,
@@ -144,7 +144,7 @@ export default {
 
                 audioURL: null,
 
-                presets: presets,
+                presets: bcPresets,
                 volume: 0.2,
                 playPosition: 0,
                 startPosition: 0,
@@ -187,27 +187,30 @@ export default {
             this.$refs.canvas.height = window.innerHeight;
 
             var presets = bcPresets;
-            this.$data.visualizer = butterchurn.createVisualizer(this.$data.audioContext, this.$refs.canvas, {
-                width: 1600,
-                height: 900
-            });
+            this.$set(this.$data, 'visualizer', butterchurn.createVisualizer(this.$data.audioContext, this.$refs.canvas, {
+                width: window.innerWidth / 4,
+                height: window.innerHeight / 4
+            }))
 
             this.$data.visualizer.connectAudio(this.$data.source);
 
             this.$data.visualizer.loadPreset(presets[this.preset], this.$data.presetBlend);
 
             this.playpause();
-            this.$data.renderLoop = setInterval(() => {
+            this.$set(this.$data, 'renderLoop', setInterval(() => {
                 if (!this.$data.playing) return;
                 if (!this.$data.doRender) return;
                 this.$data.visualizer.render();
-            }, this.$data.renderInterval);
+            }, this.$data.renderInterval));
             setTimeout(() => {
                 this.$data.visualizer.setRendererSize(window.innerWidth, window.innerHeight);
             }, 100);
         },
         setVolume (value) {
-            if (!this.$data.enable) return;
+            if (!this.$data.enable) {
+                console.warn(`[Visualizer->setVolume()] Cannot set volume since $data.enable is false`)
+                return;
+            }
             this.$data.volumeNode.gain.setValueAtTime(value, this.$data.audioContext.currentTime);
         },
         loadAudioFromURL (location) {
@@ -216,21 +219,22 @@ export default {
                 try {
                     this.$set(this.$data, 'enable', false);
                     if (this.$data.audioContext == null) {
-                        this.$data.audioContext = new AudioContext();
+                        this.$set(this.$data, 'audioContext', new AudioContext());
                     }
                     if (this.$data.volumeNode == null) {
-                        this.$data.volumeNode = this.$data.audioContext.createGain();
+                        this.$set(this.$data, 'volumeNode', this.$data.audioContext.createGain());
+                        this.$set(this.$data.volumeNode, 'value', this.$data.volume);
                         this.$data.volumeNode.value = this.$data.volume;
                         this.$data.volumeNode.connect(this.$data.audioContext.destination);
                     }
                     if (this.$data.source == null) {
-                        this.$data.source = this.audioContext.createBufferSource();
+                        this.$set(this.$data, 'source', this.audioContext.createBufferSource());
                     }
 
                     // now retrieve some binary audio data from <audio>, ajax, input file or microphone and put it into a audio source object.
                     // here we will retrieve audio binary data via AJAX
                     var request = new XMLHttpRequest();
-                    this.$data.audioURL = location;
+                    this.$set(this.$data, 'audioURL', location);
                     request.open('GET', location);
                     request.responseType = 'arraybuffer'; // This asks the browser to populate the retrieved binary data in a array buffer
                     request.onload = () => {
