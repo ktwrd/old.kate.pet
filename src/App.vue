@@ -1,5 +1,6 @@
 <template>
     <div id="app">
+        <link rel="icon" href="/static/favicon.png" type="image/png" />
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <div style="position:fixed; top: 0;left:0;">
             <b-button-group variant="outline-secondary">
