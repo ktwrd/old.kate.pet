@@ -28,9 +28,10 @@ if (false) {
         ps5.getPresets(),
         ps6.getPresets());
 }
-bcPresets['Eo.S. + Phat - chasers 18 hallway'] = require('./milkdrop-preset.json');
+Object.assign(bcPresets, require('butterchurn-presets/lib/butterchurnPresets.min').getPresets())
 bcPresets['flexi - what is the matrix'] = require('butterchurn-presets/presets/converted/flexi - what is the matrix.json')
 bcPresets['LuxXx - Makes Me Cry (five) (Makes Me Cry, So Lick My Tears, And Get Real High)'] = require('butterchurn-presets/presets/converted/LuxXx - Makes Me Cry (five) (Makes Me Cry, So Lick My Tears, And Get Real High).json')
+bcPresets['Eo.S. + Phat - chasers 18 hallway'] = require('./milkdrop-preset.json');
 
 export default {
     name: 'Visualizer',
@@ -125,6 +126,7 @@ export default {
             this.$data.playing = false;
         },
         initialState () {
+            var presets = bcPresets;
             if (this.audioURL !== undefined && this.audioURL !== null) {
                 this.loadAudioFromURL(this.audioURL);
             }
@@ -144,7 +146,7 @@ export default {
 
                 audioURL: null,
 
-                presets: bcPresets,
+                presets: presets,
                 volume: 0.2,
                 playPosition: 0,
                 startPosition: 0,
