@@ -49,7 +49,7 @@ export default {
                 ['https://res.kate.pet/88x31/roly-saynotoweb3.gif', 'https://yesterweb.org/no-to-web3/'],
                 ['https://res.kate.pet/88x31/sauce-orangetext.png', 'https://developer.valvesoftware.com/wiki/Source'],
                 ['https://res.kate.pet/88x31/cyberdog.gif'],
-                ['https://res.kate.pet/88x31/casey.png', 'https://caseys-corner.neocities.org'],
+                ['https://res.kate.pet/88x31/casey.png', 'https://casey.pet'],
                 ['https://res.kate.pet/88x31/therian.png', 'https://otherkin.fandom.com/wiki/Therians'],
                 ['https://88x31.kate.pet/rotteen.gif'],
                 ['https://88x31.kate.pet/redhat.gif']
