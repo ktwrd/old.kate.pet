@@ -11,22 +11,25 @@ canvas {
 </style>
 <script>
 import butterchurn from 'butterchurn';
-import ps1 from 'butterchurn-presets/lib/butterchurnPresets.min';
-import ps2 from 'butterchurn-presets/lib/butterchurnPresetsExtra.min';
-import ps3 from 'butterchurn-presets/lib/butterchurnPresetsExtra2.min';
-import ps4 from 'butterchurn-presets/lib/butterchurnPresetsMD1.min';
-import ps5 from 'butterchurn-presets/lib/butterchurnPresetsMinimal.min';
-import ps6 from 'butterchurn-presets/lib/butterchurnPresetsNonMinimal.min';
-
-var bcPresets = Object.assign({},
-    ps1.getPresets(),
-    ps2.getPresets(),
-    ps3.getPresets(),
-    ps4.getPresets(),
-    ps5.getPresets(),
-    ps6.getPresets());
-
+import isButterchurnSupported from 'butterchurn/lib/isSupported.min.js';
+var bcPresets = {}
+if (false) {
+    const ps1 = require('butterchurn-presets/lib/butterchurnPresets.min')
+    const ps2 = require('butterchurn-presets/lib/butterchurnPresetsExtra.min')
+    const ps3 = require('butterchurn-presets/lib/butterchurnPresetsExtra2.min')
+    const ps4 = require('butterchurn-presets/lib/butterchurnPresetsMD1.min')
+    const ps5 = require('butterchurn-presets/lib/butterchurnPresetsMinimal.min')
+    const ps6 = require('butterchurn-presets/lib/butterchurnPresetsNonMinimal.min')
+    Object.assign(bcPresets,
+        ps1.getPresets(),
+        ps2.getPresets(),
+        ps3.getPresets(),
+        ps4.getPresets(),
+        ps5.getPresets(),
+        ps6.getPresets());
+}
 bcPresets['Eo.S. + Phat - chasers 18 hallway'] = require('./milkdrop-preset.json');
+bcPresets['flexi - what is the matrix'] = require('butterchurn-presets/presets/converted/flexi - what is the matrix.json')
 bcPresets['LuxXx - Makes Me Cry (five) (Makes Me Cry, So Lick My Tears, And Get Real High)'] = require('butterchurn-presets/presets/converted/LuxXx - Makes Me Cry (five) (Makes Me Cry, So Lick My Tears, And Get Real High).json')
 
 export default {
