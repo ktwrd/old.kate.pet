@@ -29,16 +29,16 @@ const data = [
         name: `Fox Stevenson - Broken Man`,
         file: `broken_man.mp3`
     },
-    {
-        link: `https://www.youtube.com/watch?v=yHgIYfNF8kY`,
-        name: `t+pazolite - Oshama Scramble!`,
-        file: `oshama_scramble.mp3`
-    },
-    {
-        link: `https://soundcloud.com/seedvevo/tpazolite-to-luv-me-i-xxx-for-uuno-remix`,
-        name: `t+pazolite - To Luv Me I Xxx For U. (uno Remix)`,
-        file: `to_luv_me_i_xxx_for_u_uno_remix.mp3`
-    },
+    // {
+    //     link: `https://www.youtube.com/watch?v=yHgIYfNF8kY`,
+    //     name: `t+pazolite - Oshama Scramble!`,
+    //     file: `oshama_scramble.mp3`
+    // },
+    // {
+    //     link: `https://soundcloud.com/seedvevo/tpazolite-to-luv-me-i-xxx-for-uuno-remix`,
+    //     name: `t+pazolite - To Luv Me I Xxx For U. (uno Remix)`,
+    //     file: `to_luv_me_i_xxx_for_u_uno_remix.mp3`
+    // },
     {
         link: `https://soundcloud.com/saikocho/vo-lost-umbrella`,
         name: `inabakumori - Lost Umbrella`,
@@ -99,41 +99,41 @@ const data = [
         name: `nu:tone - Do It Right`,
         file: `do_it_right.mp3`
     },
-    {
-        link: `https://notebookrecordsjp.bandcamp.com/track/bitmap-fantasy`,
-        name: `DJ Laugh feat.ちよこ - Bitmap Fantasy `,
-        file: `bitmap_fantasy.mp3`
-    },
-    {
-        link: `https://www.youtube.com/watch?v=HfkSwLSvR_c`,
-        name: `t+pazolite - Elder Dragon Legend (feat. かぼちゃ) #TPZREMAKE`,
-        file: `elder_dragon_legend.mp3`
-    },
-    {
-        link: `https://www.youtube.com/watch?v=3hPfbnCSp3s`,
-        name: `t+pazolite - Cheatreal #TPZREMAKE`,
-        file: `cheatreal_tpzremake.mp3`
-    },
-    {
-        link: `https://www.youtube.com/watch?v=1qBWa6dWBRk`,
-        name: `Camellia - WYSI (When You See It)`,
-        file: `camellia-when_you_see_it.mp3`
-    },
-    {
-        link: `https://www.youtube.com/watch?v=5BlSQpejMTw`,
-        name: `t+pazolite - Chartreuse Green`,
-        file: `tpazolite-chartreuse_green.mp3`
-    },
-    {
-        link: `https://www.youtube.com/watch?v=OYtUWEdDmjI`,
-        name: `t+pazolite - Qlwa (Uncut Edition)`,
-        file: `tpazolite-qlwa_uncut.mp3`
-    },
-    {
-        link: `https://www.youtube.com/watch?v=Ppa42MWyMLk`,
-        name: `t+pazolite - Electric Butterfly`,
-        file: `tpazolite-electric_butterfly.mp3`
-    },
+    // {
+    //     link: `https://notebookrecordsjp.bandcamp.com/track/bitmap-fantasy`,
+    //     name: `DJ Laugh feat.ちよこ - Bitmap Fantasy `,
+    //     file: `bitmap_fantasy.mp3`
+    // },
+    // {
+    //     link: `https://www.youtube.com/watch?v=HfkSwLSvR_c`,
+    //     name: `t+pazolite - Elder Dragon Legend (feat. かぼちゃ) #TPZREMAKE`,
+    //     file: `elder_dragon_legend.mp3`
+    // },
+    // {
+    //     link: `https://www.youtube.com/watch?v=3hPfbnCSp3s`,
+    //     name: `t+pazolite - Cheatreal #TPZREMAKE`,
+    //     file: `cheatreal_tpzremake.mp3`
+    // },
+    // {
+    //     link: `https://www.youtube.com/watch?v=1qBWa6dWBRk`,
+    //     name: `Camellia - WYSI (When You See It)`,
+    //     file: `camellia-when_you_see_it.mp3`
+    // },
+    // {
+    //     link: `https://www.youtube.com/watch?v=5BlSQpejMTw`,
+    //     name: `t+pazolite - Chartreuse Green`,
+    //     file: `tpazolite-chartreuse_green.mp3`
+    // },
+    // {
+    //     link: `https://www.youtube.com/watch?v=OYtUWEdDmjI`,
+    //     name: `t+pazolite - Qlwa (Uncut Edition)`,
+    //     file: `tpazolite-qlwa_uncut.mp3`
+    // },
+    // {
+    //     link: `https://www.youtube.com/watch?v=Ppa42MWyMLk`,
+    //     name: `t+pazolite - Electric Butterfly`,
+    //     file: `tpazolite-electric_butterfly.mp3`
+    // },
     {
         link: `https://www.last.fm/music/Lzie/_/Don%27t+Go+Floor`,
         name: `Lzie - Don't Go Floor`,
