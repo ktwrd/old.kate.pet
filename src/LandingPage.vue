@@ -61,7 +61,7 @@ export default {
 <style>
 .eightbuttons {
     position: absolute;
-    bottom: calc(31px);
+    bottom: calc(15px);
     left: 0;
     width: 100vw;
     text-align: center;

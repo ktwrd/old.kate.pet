@@ -6,7 +6,7 @@
 
 <style scoped>
 .imageContainer {
-    height: 25vh;
+    height: 20vh;
     margin-bottom: 1rem;
     display: flex;
   justify-content: center;
@@ -15,7 +15,7 @@ img {
     object-fit: contain;
     object-position: center;
     max-width: min(400px, 80vw);
-    height: 25vh;
+    height: 20vh;
     transition: 50ms;
     margin: auto;
     display: block;
