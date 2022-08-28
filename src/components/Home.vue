@@ -275,10 +275,10 @@ export default {
             window.location = event.target.attributes.location.value;
         },
         ChangeAudioValue () {
-            this.volume = this.$refs.volume.value;
+            this.$set(this.$data, 'volume', this.$refs.volume.value);
             localStorage.AudioVolume = this.$refs.volume.value / 1024;
             this.$refs.vis.setVolume(this.$refs.volume.value / 1024);
-            this.$refs.volume.value = this.$refs.volume.value / 1024;
+            this.$refs.volume.$set(this.$refs.volume, 'value', this.$refs.volume.value / 1024);
         },
         async ToggleAudio () {
             if (this.$refs.vis.visualizer == null) {
@@ -287,7 +287,7 @@ export default {
                 this.$refs.vis.playpause();
             }
             this.$refs.vis.playpause();
-            this.$data.playing = this.$refs.vis.playing;
+            this.$set(this.$data, 'playing', this.$refs.vis.playing);
         },
         async SelectNewRandomAudio () {
             this.$delete(this.$children, 0);
@@ -305,8 +305,8 @@ export default {
             if (this.$refs.vis.playing) {
                 this.$refs.vis.playpause();
             }
-            this.$data.audioObject = AudioSelect.select();
-            this.$data.audioURL = this.$data.audioObject.url;
+            this.$set(this.$data, 'audioObject', AudioSelect.select());
+            this.$set(this.$data, 'audioURL', this.$data.audioObject.url);
             await this.$refs.vis.loadAudioFromURL(this.$data.audioURL);
             this.ChangeAudioValue(this.$data.volume);
             this.$refs.vis.playpause();
