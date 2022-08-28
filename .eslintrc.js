@@ -30,6 +30,7 @@ module.exports = {
     'semi': 0,
     'no-unneeded-ternary': 0,
     'import/first': 0,
-    'no-inner-declarations': 0
+    'no-inner-declarations': 0,
+    'no-constant-condition': 0
   }
 }
