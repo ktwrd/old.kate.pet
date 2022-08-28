@@ -36,8 +36,12 @@ export default {
     name: 'Visualizer',
     template: `<canvas ref='canvas' v-bind:audioURL='audioURL' v-bind:width='width' v-bind:height='height' />`,
     watch: {
-        audioURL (value) {
-            this.audioURL = value;
+        enabled (target) {
+            if (target === true && !isButterchurnSupported) {
+                alert(`Butterchurn is not supported on your platform ;w;`)
+                this.$set(this.$data, 'enabled', false)
+            }
+            }
         }
     },
     data () {
