@@ -42,6 +42,7 @@ export default {
     },
     methods: {
         fallbackimage () {
+            console.error(`[HeaderIcon->fallbackimage] Failed to load image, going to default`)
             this.$refs.image.attributes.src.value = 'https://res.kate.pet/image/petpet.gif';
         },
         generateFilename () {
