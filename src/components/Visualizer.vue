@@ -32,6 +32,7 @@ Object.assign(bcPresets, require('butterchurn-presets/lib/butterchurnPresets.min
 bcPresets['flexi - what is the matrix'] = require('butterchurn-presets/presets/converted/flexi - what is the matrix.json')
 bcPresets['LuxXx - Makes Me Cry (five) (Makes Me Cry, So Lick My Tears, And Get Real High)'] = require('butterchurn-presets/presets/converted/LuxXx - Makes Me Cry (five) (Makes Me Cry, So Lick My Tears, And Get Real High).json')
 bcPresets['Eo.S. + Phat - chasers 18 hallway'] = require('./milkdrop-preset.json');
+bcPresets['Eo.S. - heater core C_Phat\'s_class + sparks_mix'] = require(`./alt.json`)
 
 export default {
     name: 'Visualizer',
@@ -57,7 +58,7 @@ export default {
 
         return {
             // preset: 'flexi - what is the matrix',
-            preset: 'LuxXx - Makes Me Cry (five) (Makes Me Cry, So Lick My Tears, And Get Real High)',
+            preset: 'Eo.S. - heater core C_Phat\'s_class + sparks_mix',
 
             // Number of seconds to blend presets
             presetBlend: 0.0,
