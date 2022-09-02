@@ -153,6 +153,16 @@ const data = [
         link: `https://www.youtube.com/watch?v=4wmRs1R1ENQ`,
         name: `BoxPlot - Escape With the Clouds (V.I.P)`,
         file: `boxplot-escapewiththeclouds.mp3`
+    },
+    {
+        link: `https://nivrad00.bandcamp.com/track/random-access-memory`,
+        name: `Niv - RANDOM ACCESS MEMORY`,
+        file: `niv-ram.mp3`
+    },
+    {
+        link: `https://www.youtube.com/watch?v=tpagsVWhU18`,
+        name: `Darius - Lakeshore West Line`,
+        file: `darius-lakeshorewestline.mp3`
     }
 ];
 
