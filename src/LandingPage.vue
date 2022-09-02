@@ -52,7 +52,8 @@ export default {
                 ['https://res.kate.pet/88x31/casey.png', 'https://casey.pet'],
                 ['https://res.kate.pet/88x31/therian.png', 'https://otherkin.fandom.com/wiki/Therians'],
                 ['https://88x31.kate.pet/rotteen.gif'],
-                ['https://88x31.kate.pet/redhat.gif']
+                ['https://88x31.kate.pet/redhat.gif'],
+                ['https://88x31.kate.pet/niv-banner.gif', 'https://niv.gay/']
             ]
         };
     }
