@@ -163,6 +163,16 @@ const data = [
         link: `https://www.youtube.com/watch?v=tpagsVWhU18`,
         name: `Darius - Lakeshore West Line`,
         file: `darius-lakeshorewestline.mp3`
+    },
+    {
+        link: `https://www.youtube.com/watch?v=DZjyDXN3HjY`,
+        name: `Darius - exuviae`,
+        file: `darius-exuviae.mp3`
+    },
+    {
+        link: `https://www.youtube.com/watch?v=fv3hopI6OLA`,
+        name: `Fox Stevenson - Good Time`,
+        file: `foxstevenson-goodtime.mp3`
     }
 ];
 
