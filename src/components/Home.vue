@@ -53,7 +53,7 @@
                 </b-row>
                 <b-row>
                     <b-col>
-                        <code style="background-color: black; color: white;">
+                        <code style="background-color: black; color: white;" v-bind:hasLink="audioObject!=null&&audioObject.link!=null &&audioObject.link.length > 3? 'y' : 'n'" @click="videoRedirect(audioObject)">
                             {{ audioObject !== null && audioObject.name !== null ? audioObject.name : 'no track playing' }}
                         </code>
                     </b-col>
@@ -197,6 +197,19 @@ ul.links li {
     background-color: rgba(255, 255, 255, 0.1) !important;
     border: 1px solid #fff;
 }
+[hasLink=y] {
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: underline;
+}
+[hasLink=y]:hover {
+    font-style: italic;
+}
+[hasLink=n] {
+    font-weight: normal;
+    cursor: initial;
+    font-style: initial;
+}
 </style>
 <script>
 import Visualizer from './Visualizer.vue';
@@ -270,6 +283,11 @@ export default {
         }
     },
     methods: {
+        videoRedirect (audioObject) {
+            if (audioObject.link.toString().length > 8) {
+                window.open(audioObject.link, '_blank').focus()
+            }
+        },
         ClearSelection () {
             var sel;
             if ((sel = document.selection) && sel.empty) {
