@@ -173,6 +173,21 @@ const data = [
         link: `https://www.youtube.com/watch?v=fv3hopI6OLA`,
         name: `Fox Stevenson - Good Time`,
         file: `foxstevenson-goodtime.mp3`
+    },
+    {
+        link: `https://www.youtube.com/watch?v=Vh-9y9V9HVs`,
+        name: `TOKYOPILL - Triangles`,
+        file: `tokyopill-triangles.mp3`
+    },
+    {
+        link: `https://www.youtube.com/watch?v=wNShCHNCfUM`,
+        name: `goreshit - fine night`,
+        file: `goreshit-finenight.mp3`
+    },
+    {
+        link: `https://www.youtube.com/watch?v=RgFaK6ZQifE`,
+        name: `Sewerslvt - Mr. Kill Myself`,
+        file: `sewerslvt-mrkillmyself.mp3`
     }
 ];
 
