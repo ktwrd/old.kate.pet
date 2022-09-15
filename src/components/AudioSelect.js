@@ -188,6 +188,16 @@ const data = [
         link: `https://www.youtube.com/watch?v=RgFaK6ZQifE`,
         name: `Sewerslvt - Mr. Kill Myself`,
         file: `sewerslvt-mrkillmyself.mp3`
+    },
+    {
+        link: `https://www.youtube.com/watch?v=jNsk8XsHikg`,
+        name: `furumoon - Kimi World`,
+        file: `furumoon-kimiworld.mp3`
+    },
+    {
+        link: `https://www.youtube.com/watch?v=lgqBKPs9gjk`,
+        name: `Darius - wishy washy`,
+        file: `darius-wishywashy.mp3`
     }
 ];
 
