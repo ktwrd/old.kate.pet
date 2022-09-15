@@ -1,5 +1,5 @@
 <template>
-    <div class="container">
+    <div class="container" style="height: calc(100vh - 10rem); overflow: auto;">
         <template v-for="(track, index) in availableObjects">
             <div v-bind:key="`trackcredit-${index}`" class="track-container">
                 <template v-if="track.link.length > 8">
