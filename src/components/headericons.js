@@ -4,6 +4,8 @@ module.exports = [
     'this-user-likes-to-awoo.png',
     'jims-bottom-surgery.png',
     'ioletsgo1.png',
-    'cathodegaytube-splash.png'
+    'cathodegaytube-splash.png',
+    'sky.png',
+    'stormynights.png'
     // 'ellort.png'
 ];
