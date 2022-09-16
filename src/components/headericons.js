@@ -6,6 +6,7 @@ module.exports = [
     'ioletsgo1.png',
     'cathodegaytube-splash.png',
     'sky.png',
-    'stormynights.png'
+    'stormynights.png',
+    'neurodivergent.png'
     // 'ellort.png'
 ];
