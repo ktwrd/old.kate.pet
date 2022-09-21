@@ -4,7 +4,7 @@
             <div v-bind:key="`trackcredit-${index}`" >
                 <b-row class="m-1" style="border-bottom: 1px dashed white;">
                     <b-col cols="auto">
-                        <b-button size="sm" @click="playTrack(track, index)"><b-icon icon="play-circle"></b-icon> </b-button>
+                        <b-button :variant="index % 2 == 1 ? 'secondary' : 'primary' " size="sm" @click="playTrack(track, index)"><b-icon icon="play-circle"></b-icon> </b-button>
                     </b-col>
                     <b-col cols="1">
                         <div class="track-number">
