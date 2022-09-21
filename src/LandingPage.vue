@@ -4,7 +4,7 @@
         <template v-if="$route.name == 'blank'">
             <header-icon />
         </template>
-        <home />
+        <home ref="home" />
         <template v-if="$route.name == 'blank'">
             <a href="https://kate.pet" class="eightyeightthirtyone"><img src="https://kate.pet/button.gif" style="margin: 15px;" /></a>
             <div class="eightbuttons">

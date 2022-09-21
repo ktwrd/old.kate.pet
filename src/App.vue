@@ -10,7 +10,7 @@
                     <b-button variant="outline-secondary" style="border-top-right-radius:0;" size="sm" to="/other">Other</b-button>
                 </b-button-group>
             </div>
-            <landing-page />
+            <landing-page ref="landingPage" />
             <div style="margin-top: 7rem;"><router-view/></div>
         </div>
     </div>
