@@ -20,7 +20,7 @@ export default new Router({
         },
         {
             path: '/track-credits',
-            name: 'Track Credits',
+            name: 'Playlist',
             component: TrackCredits
         }
     ]
