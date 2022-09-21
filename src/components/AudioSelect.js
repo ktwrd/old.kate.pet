@@ -198,6 +198,16 @@ const data = [
         link: `https://www.youtube.com/watch?v=lgqBKPs9gjk`,
         name: `Darius - wishy washy`,
         file: `darius-wishywashy.mp3`
+    },
+    {
+        link: `https://www.youtube.com/watch?v=yyDWEN-kNII`,
+        name: `Fox Stevenson - Victory Over Truth`,
+        file: `foxstevenson-victoryovertruth.mp3`
+    },
+    {
+        link: `https://www.youtube.com/watch?v=dU28l-eC9cI`,
+        name: `piri & tommy - on & on`,
+        file: `piri_onon.mp3`
     }
 ];
 
