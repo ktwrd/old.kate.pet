@@ -2,7 +2,7 @@
     <div class="container" style="height: calc(100vh - 10rem); overflow: auto;">
         <template v-for="(track, index) in availableObjects">
             <div v-bind:key="`trackcredit-${index}`" >
-                <b-row class="m-1">
+                <b-row class="m-1" style="border-bottom: 1px dashed white;">
                     <b-col cols="auto">
                         <b-button size="sm" @click="playTrack(track, index)"><b-icon icon="play-circle"></b-icon> </b-button>
                     </b-col>
