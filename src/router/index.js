@@ -3,6 +3,7 @@ import Router from 'vue-router';
 import BlankPage from '@/BlankPage.vue';
 import OtherStuff from '@/OtherStuff.vue';
 import TrackCredits from '@/TrackCredits.vue';
+import Settings from '@/Settings.vue';
 
 Vue.use(Router);
 
@@ -22,6 +23,11 @@ export default new Router({
             path: '/track-credits',
             name: 'Playlist',
             component: TrackCredits
+        },
+        {
+            path: '/settings',
+            name: 'Settings',
+            component: Settings
         }
     ]
 });
