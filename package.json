@@ -19,6 +19,7 @@
     "@fortawesome/free-regular-svg-icons": "^5.15.4",
     "@fortawesome/free-solid-svg-icons": "^5.15.4",
     "@fortawesome/vue-fontawesome": "^2.0.6",
+    "axios": "^0.27.2",
     "bootstrap": "^4.6.1",
     "bootstrap-vue": "^2.21.2",
     "butterchurn": "^2.6.7",
