@@ -208,6 +208,21 @@ const data = [
         link: `https://www.youtube.com/watch?v=dU28l-eC9cI`,
         name: `piri & tommy - on & on`,
         file: `piri_onon.mp3`
+    },
+    {
+        link: 'https://www.youtube.com/watch?v=xXC5RT106pw',
+        name: 'Sewerslvt - sick, twisted, demented',
+        file: 'sewerslvt-sick_twisted_demented.mp3'
+    },
+    {
+        link: 'https://www.youtube.com/watch?v=jF5DxpHZVVQ',
+        name: `TOKYOPILL - Let's All Love Lain`,
+        file: 'tokyopill-letsalllovelain.mp3'
+    },
+    {
+        link: 'https://www.youtube.com/watch?v=JKs--_lKYeo',
+        name: 'pisca - Is your online persona an untamed unfiltered version of yourself?',
+        file: 'pisca-iyopautvoy.mp3'
     }
 ];
 
