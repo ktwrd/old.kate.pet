@@ -5,7 +5,7 @@
             <header-icon />
         </template>
         <home ref="home" />
-        <template v-if="$route.name == 'blank'">
+        <template v-if="$route.name == 'blank' && showeight">
             <a href="https://kate.pet" class="eightyeightthirtyone"><img src="https://kate.pet/button.gif" style="margin: 15px;" /></a>
             <div class="eightbuttons">
                 <ul>
@@ -29,12 +29,14 @@
 <script>
 import Home from './components/Home.vue'
 import HeaderIcon from './components/HeaderIcon.vue'
+import * as UserConfig from './UserConfig'
 export default {
     components: { Home, HeaderIcon },
     name: 'LandingPage',
     data () {
         console.log(this.$route)
         return {
+            showeight: !UserConfig.getBoolean('hide88Button'),
             eightButtons: [
                 ['https://res.kate.pet/88x31/CGG_big.gif', 'https://kernel.org'],
                 ['https://res.kate.pet/88x31/vscode.gif', 'https://code.visualstudio.com'],
@@ -57,6 +59,11 @@ export default {
                 ['https://88x31.kate.pet/lastfm-01.png', 'https://last.fm/user/seedvevo']
             ]
         };
+    },
+    watch: {
+        $route () {
+            this.$set(this.$data, 'showeight', !UserConfig.getBoolean('hide88Button'))
+        }
     }
 }
 </script>
