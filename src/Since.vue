@@ -15,7 +15,6 @@
         </b-col>
         <br>
         <br>
-        
         <h3>Came out</h3>
         <b-col cols="auto">
             <b-row>
