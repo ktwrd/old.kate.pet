@@ -18,6 +18,14 @@
                         Collection of 88x31 buttons that I've stumbled upon on the internet.<br>You can make a pull request on the <a href="https://github.com/ktwrd/88x31">github repo</a> to contribute more buttons ^w^
                     </b-card>
                 </b-col>
+                <b-col cols="auto" class="m-1">
+                    <b-card>
+                        <template #header>
+                            <a href="https://github.com/ktwrd/midiadapter">MIDI Adapter</a>
+                        </template>
+                        A Free, Open-Source, and Multi-Platform Alternative to <a href="https://github.com/Etuldan/MidiControl">midicontrol</a> that works on MacOS, Windows, and Linux.
+                    </b-card>
+                </b-col>
             </b-row>
         </b-container>
     </div>

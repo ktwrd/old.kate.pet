@@ -12,27 +12,8 @@ canvas {
 <script>
 import butterchurn from 'butterchurn';
 import isButterchurnSupported from 'butterchurn/lib/isSupported.min.js';
-var bcPresets = {}
-if (false) {
-    const ps1 = require('butterchurn-presets/lib/butterchurnPresets.min')
-    const ps2 = require('butterchurn-presets/lib/butterchurnPresetsExtra.min')
-    const ps3 = require('butterchurn-presets/lib/butterchurnPresetsExtra2.min')
-    const ps4 = require('butterchurn-presets/lib/butterchurnPresetsMD1.min')
-    const ps5 = require('butterchurn-presets/lib/butterchurnPresetsMinimal.min')
-    const ps6 = require('butterchurn-presets/lib/butterchurnPresetsNonMinimal.min')
-    Object.assign(bcPresets,
-        ps1.getPresets(),
-        ps2.getPresets(),
-        ps3.getPresets(),
-        ps4.getPresets(),
-        ps5.getPresets(),
-        ps6.getPresets());
-}
-Object.assign(bcPresets, require('butterchurn-presets/lib/butterchurnPresets.min').getPresets())
-bcPresets['flexi - what is the matrix'] = require('butterchurn-presets/presets/converted/flexi - what is the matrix.json')
-bcPresets['LuxXx - Makes Me Cry (five) (Makes Me Cry, So Lick My Tears, And Get Real High)'] = require('butterchurn-presets/presets/converted/LuxXx - Makes Me Cry (five) (Makes Me Cry, So Lick My Tears, And Get Real High).json')
-bcPresets['Eo.S. + Phat - chasers 18 hallway'] = require('./milkdrop-preset.json');
-bcPresets['Eo.S. - heater core C_Phat\'s_class + sparks_mix'] = require(`./alt.json`)
+import * as VisualizerPresets from './VisualizerPresets'
+import * as UserConfig from '../UserConfig'
 
 export default {
     name: 'Visualizer',
@@ -51,14 +32,13 @@ export default {
         }
     },
     data () {
-        var presets = bcPresets;
         if (this.audioURL !== undefined && this.audioURL !== null) {
             this.loadAudioFromURL(this.audioURL);
         }
 
         return {
             // preset: 'flexi - what is the matrix',
-            preset: 'Eo.S. - heater core C_Phat\'s_class + sparks_mix',
+            preset: 'Eo.S. - heater core C_Phats_class + sparks_mix',
 
             // Number of seconds to blend presets
             presetBlend: 0.0,
@@ -70,7 +50,7 @@ export default {
 
             audioURL: null,
 
-            presets: presets,
+            presets: {},
             volume: 0.2,
             playPosition: 0,
             startPosition: 0,
@@ -84,9 +64,8 @@ export default {
 
             playing: false,
 
-            enable: true,
-
             canvas: {},
+            enable: UserConfig.getBoolean('enableVisualizer'),
 
             lockButton: false
         };
@@ -101,6 +80,7 @@ export default {
                 this.$data.visualizer.setRendererSize(window.innerWidth, window.innerHeight);
             }
         });
+        this.fetchPreset()
     },
     methods: {
         kill () {
@@ -126,16 +106,18 @@ export default {
             }
             this.$data.playing = false;
         },
+        async fetchPreset () {
+            let presets = await VisualizerPresets.Fetch()
+            this.$set(this.$data, 'presets', presets)
+        },
         initialState () {
-            var presets = bcPresets;
+            var presets = {};
             if (this.audioURL !== undefined && this.audioURL !== null) {
                 this.loadAudioFromURL(this.audioURL);
             }
 
             return {
-                preset: 'flexi - what is the matrix',
-                // preset: 'LuxXx - Makes Me Cry (five) (Makes Me Cry, So Lick My Tears, And Get Real High)',
-                // preset: 'Eo.S. + Phat - chasers 18 hallway',
+                preset: 'Eo.S. + Phat - chasers 18 hallway',
 
                 // Number of seconds to blend presets
                 presetBlend: 0.0,
@@ -164,7 +146,7 @@ export default {
             };
         },
         playpause () {
-            if (!this.$data.enable) return;
+            if (!this.enable) return;
             if (this.$data.playing) {
                 this.$data.audioContext.suspend();
                 this.$data.playing = false;
@@ -174,7 +156,7 @@ export default {
             }
         },
         setPreset (name, blend = this.$data.presetBlend) {
-            if (!this.$data.enable) return;
+            if (!this.enable) return;
             this.$data.visualizer.loadPreset(this.$data.presets[name], blend);
         },
         createVisualizer () {
@@ -182,22 +164,22 @@ export default {
                 alert(`Butterchurn is not supported on your platform ;w;`)
                 return;
             }
-            if (!this.$data.enable) return;
+            if (!this.enable) return;
             console.log('Created Visualizer', this.$data);
             window.AudioContext = window.AudioContext || window.webkitAudioContext || window.mozAudioContext;
 
             this.$refs.canvas.width = window.innerWidth;
             this.$refs.canvas.height = window.innerHeight;
 
-            var presets = bcPresets;
+            var presets = this.$data.presets;
             this.$set(this.$data, 'visualizer', butterchurn.createVisualizer(this.$data.audioContext, this.$refs.canvas, {
                 width: window.innerWidth / 4,
                 height: window.innerHeight / 4
             }))
 
             this.$data.visualizer.connectAudio(this.$data.source);
-
-            this.$data.visualizer.loadPreset(presets[this.preset], this.$data.presetBlend);
+            let stringed = JSON.stringify(presets[this.preset])
+            this.$data.visualizer.loadPreset(JSON.parse(stringed), this.$data.presetBlend);
 
             this.playpause();
             this.$set(this.$data, 'renderLoop', setInterval(() => {
@@ -210,14 +192,14 @@ export default {
             }, 100);
         },
         setVolume (value) {
-            if (!this.$data.enable) {
+            if (!this.enable) {
                 console.warn(`[Visualizer->setVolume()] Cannot set volume since $data.enable is false`)
                 return;
             }
             this.$data.volumeNode.gain.setValueAtTime(value, this.$data.audioContext.currentTime);
         },
         loadAudioFromURL (location) {
-            if (!this.$data.enable) return;
+            if (!this.enable) return;
             return new Promise((resolve, reject) => {
                 try {
                     this.$set(this.$data, 'enable', false);

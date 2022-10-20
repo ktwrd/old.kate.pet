@@ -351,6 +351,21 @@ export default {
             this.$refs.vis.playpause();
             $(this.$refs.btn_NewSong).prop('disabled', false);
             $(this.$refs.btn_PlayPause).prop('disabled', false);
+        },
+        async SetAudio (obj) {
+            this.ClearSelection();
+            $(this.$refs.btn_NewSong).prop('disabled', true);
+            $(this.$refs.btn_PlayPause).prop('disabled', true);
+            if (this.$refs.vis.playing) {
+                this.$refs.vis.playpause();
+            }
+            this.$set(this.$data, 'audioObject', obj);
+            this.$set(this.$data, 'audioURL', this.$data.audioObject.url);
+            await this.$refs.vis.loadAudioFromURL(this.$data.audioURL);
+            this.ChangeAudioValue(this.$data.volume);
+            this.$refs.vis.playpause();
+            $(this.$refs.btn_NewSong).prop('disabled', false);
+            $(this.$refs.btn_PlayPause).prop('disabled', false);
         }
     }
 };
