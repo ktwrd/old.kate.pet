@@ -151,8 +151,8 @@
 }
 img.LinkTab {
     border: 2px solid rgb(109, 109, 109);
-    height: 71px;
-    width: 200px;
+    height: min(71px, 15vw);
+    width: min(200px, calc((200/71) * 15vw));
 
     -webkit-transition: 0.4s;
     transition: 0.4s;
@@ -258,6 +258,12 @@ export default {
                     color: '#1DA1F2',
                     colorhover: '#e1e1e1',
                     location: 'https://twitter.com/seedvevo'
+                },
+                {
+                    type: 'mastodon',
+                    color: '',
+                    colorhover: '',
+                    location: 'https://dariox.clu/@kate'
                 },
                 {
                     type: 'other_shirt',
