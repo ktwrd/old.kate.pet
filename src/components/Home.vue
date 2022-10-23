@@ -263,7 +263,7 @@ export default {
                     type: 'mastodon',
                     color: '',
                     colorhover: '',
-                    location: 'https://dariox.clu/@kate'
+                    location: 'https://dariox.club/@kate'
                 },
                 {
                     type: 'other_shirt',
