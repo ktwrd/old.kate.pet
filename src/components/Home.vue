@@ -262,12 +262,12 @@ export default {
                     colorhover: '#e1e1e1',
                     location: 'https://github.com/ktwrd'
                 },
-                {
-                    type: 'twitter',
-                    color: '#1DA1F2',
-                    colorhover: '#e1e1e1',
-                    location: 'https://twitter.com/seedvevo'
-                },
+                // {
+                //     type: 'twitter',
+                //     color: '#1DA1F2',
+                //     colorhover: '#e1e1e1',
+                //     location: 'https://twitter.com/seedvevo'
+                // },
                 {
                     type: 'mastodon',
                     color: '',
