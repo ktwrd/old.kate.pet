@@ -246,11 +246,15 @@ export default {
             visualizer: null,
             enableVisualizer: localStorage.Visualizer === 'true' ? true : false,
             PageLinks: [
+                // {
+                //     type: 'discord',
+                //     color: '#5865F2',
+                //     colorhover: '#e1e1e1',
+                //     location: 'https://discord.gg/GPjpzRvpSp'
+                // },
                 {
-                    type: 'discord',
-                    color: '#5865F2',
-                    colorhover: '#e1e1e1',
-                    location: 'https://discord.gg/GPjpzRvpSp'
+                    type: 'revolt',
+                    location: 'https://rvlt.gg/aNVvEkJN'
                 },
                 {
                     type: 'github',
