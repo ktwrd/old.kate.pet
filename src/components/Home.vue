@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div v-bind:isRootPath="$route.path == '/' ? 'yes' : 'no'">
         <template v-if="enableVisualizer">
             <div class="backgroundElement" type="visualizer">
                 <template v-if="visualizerComponent">
@@ -65,27 +65,25 @@
                 </b-row>
             </div>
         </template>
-        <template v-if="$route.name == 'blank'">
-            <ul class="links">
-                <template v-for="link in PageLinks">
-                    <li v-bind:key="link.type">
-                        <template v-if="typeof link.location == 'function'">
-                            <img :src="`https://res.kate.pet/image/links/${link.type}.png`"
-                                @click="link.location"
-                                class="LinkTab"
-                                name="placeholder" />
-                        </template>
-                        <template v-else>
-                            <img :src="`https://res.kate.pet/image/links/${link.type}.png`"
-                                @click="PageRedirect"
-                                :location="link.location"
-                                class="LinkTab"
-                                name="placeholder" />
-                        </template>
-                    </li>
-                </template>
-            </ul>
-        </template>
+        <ul class="links">
+            <template v-for="link in PageLinks">
+                <li v-bind:key="link.type">
+                    <template v-if="typeof link.location == 'function'">
+                        <img :src="`https://res.kate.pet/image/links/${link.type}.png`"
+                            @click="link.location"
+                            class="LinkTab"
+                            name="placeholder" />
+                    </template>
+                    <template v-else>
+                        <img :src="`https://res.kate.pet/image/links/${link.type}.png`"
+                            @click="PageRedirect"
+                            :location="link.location"
+                            class="LinkTab"
+                            name="placeholder" />
+                    </template>
+                </li>
+            </template>
+        </ul>
         <!-- <b-tabs pills align="center" content-class="mt-3" active-nav-item-class="font-weight-bold cool-selected-tab">
             <template v-for="link in PageLinks">
                 <b-tab role="presentation" @click="PageRedirect" v-bind:key="link.type">
@@ -214,6 +212,12 @@ ul.links li {
     font-weight: normal;
     cursor: initial;
     font-style: initial;
+}
+[isrootpath=yes] .links {
+    display: inline !important;
+}
+[isrootpath=no] .links {
+    display: none !important;
 }
 </style>
 <script>

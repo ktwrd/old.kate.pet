@@ -223,6 +223,16 @@ const data = [
         link: 'https://www.youtube.com/watch?v=JKs--_lKYeo',
         name: 'pisca - Is your online persona an untamed unfiltered version of yourself?',
         file: 'pisca-iyopautvoy.mp3'
+    },
+    {
+        link: 'https://www.youtube.com/watch?v=fUY-oJB2YcQ',
+        name: 'Sewerslvt - Was It Weird I Listened To Im God By Clams Casino\'s When I Lost My Virginity',
+        file: 'sewerslvt-imgod.mp3'
+    },
+    {
+        link: 'https://www.youtube.com/watch?v=GztyGZV1gIc',
+        name: 'Sewerslvt - the last thing she sent me',
+        file: 'sewerslvt-thelastthingshesentme.mp3'
     }
 ];
 

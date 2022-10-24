@@ -1,5 +1,5 @@
 <template>
-    <div class="container" style="height: calc(100vh - 10rem); overflow: auto;">
+    <div class="container">
         <template v-for="(track, index) in availableObjects">
             <div v-bind:key="`trackcredit-${index}`" >
                 <b-row class="m-1" style="border-bottom: 1px dashed white;">
@@ -34,6 +34,12 @@
 }
 .track-container {
     width: fit-content;
+}
+</style>
+<style scoped>
+.container {
+    height: calc(100vh - 15rem);
+    overflow: auto;
 }
 </style>
 <script>
