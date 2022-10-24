@@ -5,6 +5,7 @@ import OtherStuff from '@/OtherStuff.vue';
 import TrackCredits from '@/TrackCredits.vue';
 import Since from '@/Since.vue';
 import Settings from '@/Settings.vue';
+import Contact from '@/Contact.vue';
 
 Vue.use(Router);
 
@@ -34,6 +35,11 @@ export default new Router({
             path: '/settings',
             name: 'Settings',
             component: Settings
+        },
+        {
+            path: '/contact',
+            name: 'Contact',
+            component: Contact
         }
     ]
 });

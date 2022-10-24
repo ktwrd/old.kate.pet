@@ -34,21 +34,26 @@
                 </b-row>
                 <b-row>
                     <b-col v-bind:playing="IsPlaying()">
-                        <b-button
-                            size="sm"
-                            ref="btn_PlayPause"
-                            type="button"
-                            @click="ToggleAudio">
+                        <b-button-group>
+                            <b-button
+                                size="sm"
+                                ref="btn_PlayPause"
+                                type="button"
+                                @click="ToggleAudio">
 
-                            {{ IsPlaying() ? 'Pause' : 'Play' }}
+                                {{ IsPlaying() ? 'Pause' : 'Play' }}
 
-                        </b-button>
-                        <b-button
-                            size="sm"
-                            ref="btn_NewSong"
-                            @click="SelectNewRandomAudio()">
-                            New Song
-                        </b-button>
+                            </b-button>
+                            <b-button
+                                size="sm"
+                                ref="btn_NewSong"
+                                @click="SelectNewRandomAudio()">
+                                New Song
+                            </b-button>
+                            <b-button
+                                size="sm"
+                                to="/track-credits">Track Credits</b-button>
+                        </b-button-group>
                     </b-col>
                 </b-row>
                 <b-row>
@@ -101,7 +106,7 @@
 </template>
 <style>
 .visualizerControls[notMainView=yes] {
-    top: 0;
+    top: 2rem;
     position: absolute;
     right: 0;
     max-width: fit-content;
