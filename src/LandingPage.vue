@@ -76,7 +76,7 @@ export default {
     text-align: center;
 }
 .eightbuttons * img {
-    height: 31px;
+    height: min(31px, 4vh);
 }
 .eightbuttons ul,
 .eightbuttons ul li {

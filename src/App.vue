@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div id="app">
+        <div id="app" v-bind:notMainView="$route.name != 'blank' ? 'yes' : 'no'">
             <link rel="icon" href="/static/favicon.png" type="image/png" />
             <meta name="viewport" content="width=device-width, initial-scale=1">
             <div style="position:fixed; top: 0;left:0;">
@@ -12,7 +12,7 @@
                 </b-button-group>
             </div>
             <landing-page ref="landingPage" />
-            <div style="margin-top: 7rem;"><router-view/></div>
+            <div class="routerView"><router-view/></div>
         </div>
     </div>
 </template>
@@ -53,6 +53,13 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-align: center;
-    margin-top: 1rem;
+    margin-top: 2rem;
+}
+
+[notMainView=yes] .routerView {
+    margin-top: 10rem;
+}
+[notMainView=no] .routerView {
+    margin-top: 7rem;
 }
 </style>
