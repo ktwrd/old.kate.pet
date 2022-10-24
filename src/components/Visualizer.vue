@@ -38,7 +38,7 @@ export default {
 
         return {
             // preset: 'flexi - what is the matrix',
-            preset: 'Eo.S. - heater core C_Phats_class + sparks_mix',
+            preset: 'flexi - patternton, district of media, capitol of the united abstractions of fractopia',
 
             // Number of seconds to blend presets
             presetBlend: 0.0,
