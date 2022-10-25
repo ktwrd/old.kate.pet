@@ -28,6 +28,18 @@
                 <b-col></b-col>
             </b-row>
         </b-col>
+        <br>
+        <br>
+        <h3>Taken for</h3>
+        <b-col cols="auto">
+            <b-row>
+                <b-col></b-col>
+                <b-col cols="auto">
+                    <TimeSinceComponent :timestamp="1649606122*1000" />
+                </b-col>
+                <b-col></b-col>
+            </b-row>
+        </b-col>
     </div>
 </template>
 <style scoped>
