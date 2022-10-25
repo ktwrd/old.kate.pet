@@ -44,12 +44,8 @@ export default {
             if (hours > 0) {
                 str.push(`${hours} hour${hours > 1 ? 's' : ''}`)
             }
-            if (minutes > 0) {
-                str.push(`${minutes} minute${minutes > 1 ? 's' : ''}`)
-            }
-            if (seconds > 0) {
-                str.push(`${seconds} second${seconds > 1 ? 's' : ''}`)
-            }
+            str.push(`${minutes} minute${minutes > 1 ? 's' : ''}`)
+            str.push(`${seconds} second${seconds > 1 ? 's' : ''}`)
 
             this.$refs['txt'].innerHTML = str.join(', ')
         }, 500)
