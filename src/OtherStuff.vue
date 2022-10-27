@@ -3,6 +3,13 @@
         <b-container>
             <b-row class="d-flex flex-row">
                 <b-col cols="auto" class="m-1">
+                    <b-card no-body>
+                        <template #header>
+                            <a href="#/since">Time since</a>
+                        </template>
+                    </b-card>
+                </b-col>
+                <b-col cols="auto" class="m-1">
                     <b-card>
                     <template #header>
                         <a href="https://sixgrid.kate.pet/github">SixGrid</a>
