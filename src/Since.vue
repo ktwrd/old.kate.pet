@@ -4,10 +4,10 @@
         <b-col cols="auto">
             <b-row>
                 <b-col></b-col>
-                <b-col cols="auto">
+                <b-col cols="auto" style="padding-right: 5px !important;">
                     <TimeSinceComponent :timestamp="1654770300*1000" />
                 </b-col>
-                <b-col cols="auto">
+                <b-col cols="auto" style="padding: 0 !important;">
                     ago
                 </b-col>
                 <b-col></b-col>
@@ -19,10 +19,10 @@
         <b-col cols="auto">
             <b-row>
                 <b-col></b-col>
-                <b-col cols="auto">
+                <b-col cols="auto" style="padding-right: 5px !important;">
                     <TimeSinceComponent :timestamp="1640227568*1000" />
                 </b-col>
-                <b-col cols="auto">
+                <b-col cols="auto" style="padding: 0 !important;">
                     ago
                 </b-col>
                 <b-col></b-col>
@@ -34,7 +34,7 @@
         <b-col cols="auto">
             <b-row>
                 <b-col></b-col>
-                <b-col cols="auto">
+                <b-col cols="auto" style="padding: 0 !important;">
                     <TimeSinceComponent :timestamp="1649606122*1000" />
                 </b-col>
                 <b-col></b-col>
