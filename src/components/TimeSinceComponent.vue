@@ -12,7 +12,8 @@ export default {
     },
     mounted () {
         setInterval(() => {
-            let startDate = new Date(this.$props.timestamp)
+            let startDate = new Date(0)
+            startDate.setUTCMilliseconds(this.$props.timestamp)
             let start = startDate.getTime()
             let nowDate = new Date()
             let now = nowDate.getTime()
@@ -44,7 +45,9 @@ export default {
             if (hours > 0) {
                 str.push(`${hours} hour${hours > 1 ? 's' : ''}`)
             }
-            str.push(`${minutes} minute${minutes > 1 ? 's' : ''}`)
+            if (minutes > 0) {
+                str.push(`${minutes} minute${minutes > 1 ? 's' : ''}`)
+            }
             str.push(`${seconds} second${seconds > 1 ? 's' : ''}`)
 
             this.$refs['txt'].innerHTML = str.join(', ')
