@@ -22,7 +22,7 @@ export default {
 
             // Time calculations for days, hours, minutes and seconds
             var years = Math.floor(distance / 31556952000)
-            var months = this.getMonthDifference(new Date(this.$props.timestamp), nowDate);
+            var months = Math.floor((distance / (1000 * 60 * 60 * 24 * 7 * 4)) % 12);
             var weeks = Math.floor((distance % (1000 * 60 * 60 * 24 * 7 * 4)) / (1000 * 60 * 60 * 24 * 7))
             var days = Math.floor((distance % (1000 * 60 * 60 * 24 * 7)) / (1000 * 60 * 60 * 24));
             var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
