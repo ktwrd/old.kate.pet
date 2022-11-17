@@ -63,6 +63,10 @@ export default {
                 {
                     label: 'Gitlab',
                     link: 'https://gitlab.com/ktwrd'
+                },
+                {
+                    label: 'Last.fm',
+                    link: 'https://last.fm/user/seedvevo'
                 }
             ]
         }
