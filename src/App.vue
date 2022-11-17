@@ -7,7 +7,7 @@
                 <b-button-group variant="outline-secondary">
                     <b-button variant="outline-secondary" style="border-top-left-radius: 0; border-bottom-left-radius: 0;" size="sm" href="#/">Home</b-button>
                     <b-button variant="outline-secondary" style="border-radius:none" size="sm" to="/settings">Settings</b-button>
-                    <b-button variant="outline-secondary" style="border-radius:none" size="sm" to="/contact">Contact</b-button>
+                    <b-button variant="outline-secondary" style="border-radius:none" size="sm" to="/links">Links</b-button>
                     <b-button variant="outline-secondary" style="border-top-right-radius:0;" size="sm" to="/other">Other</b-button>
                 </b-button-group>
             </div>

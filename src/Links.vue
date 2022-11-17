@@ -4,7 +4,7 @@
             <b-col></b-col>
             <b-col cols="auto" style="max-width">
                 <b-row>
-                    <h1 style="font-size: 2rem;">Contact</h1>
+                    <h1 style="font-size: 3rem;">Links</h1>
                 </b-row>
                 <template v-for="(obj, idx) in items">
                     <div v-bind:key="`contact-item-${idx}`">
@@ -32,7 +32,7 @@
 </template>
 <script>
 export default {
-    name: 'Contact',
+    name: 'Links',
     data () {
         return {
             items: [
@@ -46,11 +46,23 @@ export default {
                 },
                 {
                     label: 'Email',
-                    link: 'mailto:kate.vmf@pm.me'
+                    text: 'kate@dariox.club'
                 },
                 {
                     label: 'Matrix',
                     text: '@ktwrd:catgirl.cloud'
+                },
+                {
+                    label: 'Revolt Server',
+                    link: 'https://rvlt.gg/aNVvEkJN'
+                },
+                {
+                    label: 'Github',
+                    link: 'https://github.com/ktwrd'
+                },
+                {
+                    label: 'Gitlab',
+                    link: 'https://gitlab.com/ktwrd'
                 }
             ]
         }

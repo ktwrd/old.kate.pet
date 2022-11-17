@@ -5,7 +5,7 @@ import OtherStuff from '@/OtherStuff.vue';
 import TrackCredits from '@/TrackCredits.vue';
 import Since from '@/Since.vue';
 import Settings from '@/Settings.vue';
-import Contact from '@/Contact.vue';
+import Links from '@/Links.vue';
 
 Vue.use(Router);
 
@@ -38,8 +38,13 @@ export default new Router({
         },
         {
             path: '/contact',
-            name: 'Contact',
-            component: Contact
+            name: 'Links',
+            redirect: '/links'
+        },
+        {
+            path: '/links',
+            name: 'Links',
+            component: Links
         }
     ]
 });
