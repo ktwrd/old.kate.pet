@@ -70,7 +70,7 @@ export default {
                 },
                 {
                     label: 'Tumblr',
-                    link: 'https://www.tumblr.com/ktwrd'
+                    link: 'https://ktwrd.tumblr.com/'
                 }
             ]
         }
