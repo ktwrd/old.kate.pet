@@ -49,6 +49,10 @@ export default {
                     text: 'kate@dariox.club'
                 },
                 {
+                    label: 'Pronouns',
+                    link: 'https://en.pronouns.page/@seedvevo'
+                },
+                {
                     label: 'Matrix',
                     text: '@ktwrd:catgirl.cloud'
                 },
