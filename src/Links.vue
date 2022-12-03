@@ -61,6 +61,10 @@ export default {
                     link: 'https://rvlt.gg/aNVvEkJN'
                 },
                 {
+                    label: 'Discord Server',
+                    link: 'https://discord.gg/GPjpzRvpSp'
+                },
+                {
                     label: 'Github',
                     link: 'https://github.com/ktwrd'
                 },
