@@ -38,25 +38,20 @@ export default {
         return {
             showeight: !UserConfig.getBoolean('hide88Button'),
             eightButtons: [
-                ['https://res.kate.pet/88x31/CGG_big.gif', 'https://kernel.org'],
-                ['https://res.kate.pet/88x31/vscode.gif', 'https://code.visualstudio.com'],
-                ['https://res.kate.pet/88x31/exopet_newbutton.gif', 'https://exo.pet'],
+                ['https://res.kate.pet/88x31/casey.png', 'https://casey.pet'],
                 ['https://res.kate.pet/88x31/emma.gif', 'https://heckscaper.com'],
+                ['https://res.kate.pet/88x31/exopet_newbutton.gif', 'https://exo.pet'],
                 ['https://res.kate.pet/88x31/lapfoxgrad.gif', 'https://halleylabs.com'],
                 ['https://res.kate.pet/88x31/niku.png', 'https://nikutrax.neocities.org'],
-                ['https://res.kate.pet/88x31/pride.gif'],
+                ['https://88x31.kate.pet/niv-banner.gif', 'https://niv.gay/'],
                 ['https://res.kate.pet/88x31/sanya.png', 'https://sanya.gay'],
                 ['https://res.kate.pet/88x31/flag-trans.png'],
                 ['https://res.kate.pet/88x31/flag-pan.png'],
                 ['https://res.kate.pet/88x31/roly-saynotoweb3.gif', 'https://yesterweb.org/no-to-web3/'],
-                ['https://res.kate.pet/88x31/sauce-orangetext.png', 'https://developer.valvesoftware.com/wiki/Source'],
-                ['https://res.kate.pet/88x31/cyberdog.gif'],
-                ['https://res.kate.pet/88x31/casey.png', 'https://casey.pet'],
                 ['https://res.kate.pet/88x31/therian.png', 'https://otherkin.fandom.com/wiki/Therians'],
-                ['https://88x31.kate.pet/rotteen.gif'],
                 ['https://88x31.kate.pet/redhat.gif'],
-                ['https://88x31.kate.pet/niv-banner.gif', 'https://niv.gay/'],
-                ['https://88x31.kate.pet/lastfm-01.png', 'https://last.fm/user/seedvevo']
+                ['https://res.kate.pet/88x31/CGG_big.gif', 'https://kernel.org'],
+                ['https://res.kate.pet/88x31/vscode.gif', 'https://code.visualstudio.com']
             ]
         };
     },
