@@ -155,7 +155,7 @@
 img.LinkTab {
     border: 2px solid rgb(109, 109, 109);
     height: min(71px, 15vw);
-    width: min(200px, calc((200/71) * 15vw));
+    max-width: min(200px, calc((200/71) * 15vw));
 
     -webkit-transition: 0.4s;
     transition: 0.4s;
@@ -179,10 +179,11 @@ ul.links {
 }
 ul.links li {
     vertical-align: top;
-    width: 200px;
-    height: 71px;
     margin: 4px;
     padding: 2px;
+}
+ul.links li img {
+    height: 71px;
 }
 ul.links,
 ul.links li {
@@ -285,13 +286,13 @@ export default {
                     location: () => {
                         window.location = '#/other'
                     }
-                }/* ,
+                },
                 {
-                    type: 'kofi',
+                    type: 'kofi_s_tag_dark',
                     color: '#9d6538',
                     colorhover: '#e1e1e1',
-                    location: 'https://ko-fi.com/seeeeeed'
-                } */
+                    location: 'https://ko-fi.com/ktwrd'
+                }
             ]
         };
     },
