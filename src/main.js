@@ -15,6 +15,7 @@ import router from './router';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-vue/dist/bootstrap-vue.min.css';
+import './gh-fork-ribbon.css';
 
 Vue.config.productionTip = false;
 

@@ -1,5 +1,6 @@
 <template>
     <div v-bind:isRootPath="$route.path == '/' ? 'yes' : 'no'">
+        <a class="github-fork-ribbon right-bottom" href="mailto:hireme@kate.pet" data-ribbon="Open for Work" title="Open for Work">Open for Work</a>
         <template v-if="enableVisualizer">
             <div class="backgroundElement" type="visualizer">
                 <template v-if="visualizerComponent">
