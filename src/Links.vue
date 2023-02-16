@@ -37,8 +37,8 @@ export default {
         return {
             items: [
                 {
-                    label: 'Mastodon',
-                    link: 'https://dariox.club/@kate'
+                    label: 'Plemora',
+                    link: 'https://xenia.social/kate'
                 },
                 {
                     label: 'Twitter',
