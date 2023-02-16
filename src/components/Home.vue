@@ -278,7 +278,7 @@ export default {
                     type: 'mastodon',
                     color: '',
                     colorhover: '',
-                    location: 'https://dariox.club/@kate'
+                    location: 'https://xenia.social/kate'
                 },
                 {
                     type: 'other_shirt',
