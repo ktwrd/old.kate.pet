@@ -75,10 +75,6 @@ export default {
                 {
                     label: 'Last.fm',
                     link: 'https://last.fm/user/seedvevo'
-                },
-                {
-                    label: 'Tumblr',
-                    link: 'https://ktwrd.tumblr.com/'
                 }
             ]
         }
