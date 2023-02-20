@@ -41,6 +41,10 @@ export default {
                     link: 'https://xenia.social/kate'
                 },
                 {
+                    label: 'Blog',
+                    link: 'https://b.kate.pet'
+                },
+                {
                     label: 'Twitter',
                     link: 'https://twitter.com/seedvevo'
                 },
