@@ -35,7 +35,7 @@
             <b-row>
                 <b-col></b-col>
                 <b-col cols="auto" style="padding: 0 !important;">
-                    <TimeSinceComponent :timestamp="1649606122*1000" />
+                    <TimeSinceComponent :timestamp="1649606153*1000" />
                 </b-col>
                 <b-col></b-col>
             </b-row>
