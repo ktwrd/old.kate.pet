@@ -79,6 +79,14 @@ export default {
                 {
                     label: 'Last.fm',
                     link: 'https://last.fm/user/seedvevo'
+                },
+                {
+                    label: 'Stackshare',
+                    link: 'https://stackshare.io/ktwrd/my-stack'
+                },
+                {
+                    label: 'Steam',
+                    link: 'https://steamcommunity.com/id/seed_main'
                 }
             ]
         }
