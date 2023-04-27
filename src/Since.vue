@@ -30,7 +30,7 @@
         </b-col>
         <br>
         <br>
-        <h3>Taken for</h3>
+        <!-- <h3>Taken for</h3> Kaia
         <b-col cols="auto">
             <b-row>
                 <b-col></b-col>
@@ -39,7 +39,7 @@
                 </b-col>
                 <b-col></b-col>
             </b-row>
-        </b-col>
+        </b-col> -->
     </div>
 </template>
 <style scoped>
