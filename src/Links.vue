@@ -38,7 +38,7 @@ export default {
             items: [
                 {
                     label: 'Plemora',
-                    link: 'https://xenia.social/kate'
+                    link: 'https://r.kate.pet/social'
                 },
                 {
                     label: 'Blog',
@@ -46,7 +46,7 @@ export default {
                 },
                 {
                     label: 'Twitter',
-                    link: 'https://twitter.com/seedvevo'
+                    link: 'https://r.kate.pet/twitter'
                 },
                 {
                     label: 'Email',
@@ -54,7 +54,7 @@ export default {
                 },
                 {
                     label: 'Pronouns',
-                    link: 'https://en.pronouns.page/@seedvevo'
+                    link: 'https://r.kate.pet/pronouns'
                 },
                 {
                     label: 'Matrix',
@@ -62,15 +62,15 @@ export default {
                 },
                 {
                     label: 'Revolt Server',
-                    link: 'https://rvlt.gg/aNVvEkJN'
+                    link: 'https://r.kate.pet/revolt'
                 },
                 {
                     label: 'Discord Server',
-                    link: 'https://discord.gg/GPjpzRvpSp'
+                    link: 'https://r.kate.pet/discord'
                 },
                 {
                     label: 'Github',
-                    link: 'https://github.com/ktwrd'
+                    link: 'https://r.kate.pet/github'
                 },
                 {
                     label: 'Gitlab',
@@ -78,15 +78,15 @@ export default {
                 },
                 {
                     label: 'Last.fm',
-                    link: 'https://last.fm/user/seedvevo'
+                    link: 'https://r.kate.pet/lastfm'
                 },
                 {
                     label: 'Stackshare',
-                    link: 'https://stackshare.io/ktwrd/my-stack'
+                    link: 'https://r.kate.pet/stackshare'
                 },
                 {
                     label: 'Steam',
-                    link: 'https://steamcommunity.com/id/seed_main'
+                    link: 'https://r.kate.pet/steam'
                 }
             ]
         }

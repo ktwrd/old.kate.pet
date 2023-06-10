@@ -12,7 +12,7 @@
                 <b-col cols="auto" class="m-1">
                     <b-card>
                     <template #header>
-                        <a href="https://sixgrid.kate.pet/github">SixGrid</a>
+                        <a href="https://r.kate.pet/6grid">SixGrid</a>
                     </template>
                         A Completely Free and Open Source Desktop Client for e926 and websites alike.<br>Currently it is in it's beta phase, but it is available through Steam by requesting a key on the <a href="https://sixgrid.kate.pet/discord">discord server</a>.
                     </b-card>

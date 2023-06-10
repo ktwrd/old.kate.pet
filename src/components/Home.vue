@@ -260,13 +260,13 @@ export default {
                 // },
                 {
                     type: 'revolt',
-                    location: 'https://rvlt.gg/aNVvEkJN'
+                    location: 'https://r.kate.pet/revolt'
                 },
                 {
                     type: 'github',
                     color: '#8867b8',
                     colorhover: '#e1e1e1',
-                    location: 'https://github.com/ktwrd'
+                    location: 'https://r.kate.pet/github'
                 },
                 // {
                 //     type: 'twitter',
@@ -278,7 +278,7 @@ export default {
                     type: 'mastodon',
                     color: '',
                     colorhover: '',
-                    location: 'https://xenia.social/kate'
+                    location: 'https://r.kate.pet/social'
                 },
                 {
                     type: 'other_shirt',
@@ -292,7 +292,7 @@ export default {
                     type: 'kofi_s_tag_dark',
                     color: '#9d6538',
                     colorhover: '#e1e1e1',
-                    location: 'https://ko-fi.com/ktwrd'
+                    location: 'https://r.kate.pet/donate'
                 }
             ]
         };
