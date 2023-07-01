@@ -281,6 +281,10 @@ export default {
                     location: 'https://r.kate.pet/social'
                 },
                 {
+                    type: 'xenia_bot',
+                    location: 'https://r.kate.pet/xeniainvite'
+                },
+                {
                     type: 'other_shirt',
                     color: '#ffffff',
                     colorhover: '#ffffff',
