@@ -41,6 +41,19 @@ export default {
                     link: 'https://r.kate.pet/social'
                 },
                 {
+                    label: 'Lemmy',
+                    link: 'https://r.kate.pet/lemmy'
+                },
+                {
+                    label: 'Bluesky',
+                    link: 'https://r.kate.pet/bluesky',
+                    text: '@kate.pet'
+                },
+                {
+                    label: 'Matrix',
+                    text: '@ktwrd:catgirl.cloud'
+                },
+                {
                     label: 'Blog',
                     link: 'https://b.kate.pet'
                 },
@@ -55,10 +68,6 @@ export default {
                 {
                     label: 'Pronouns',
                     link: 'https://r.kate.pet/pronouns'
-                },
-                {
-                    label: 'Matrix',
-                    text: '@ktwrd:catgirl.cloud'
                 },
                 {
                     label: 'Revolt Server',

@@ -263,10 +263,8 @@ export default {
                     location: 'https://r.kate.pet/revolt'
                 },
                 {
-                    type: 'github',
-                    color: '#8867b8',
-                    colorhover: '#e1e1e1',
-                    location: 'https://r.kate.pet/github'
+                    type: 'xenia_bot',
+                    location: 'https://r.kate.pet/xeniainvite'
                 },
                 // {
                 //     type: 'twitter',
@@ -281,16 +279,22 @@ export default {
                     location: 'https://r.kate.pet/social'
                 },
                 {
-                    type: 'xenia_bot',
-                    location: 'https://r.kate.pet/xeniainvite'
+                    type: 'bluesky',
+                    location: 'https://r.kate.pet/bluesky'
                 },
+                // {
+                //     type: 'other_shirt',
+                //     color: '#ffffff',
+                //     colorhover: '#ffffff',
+                //     location: () => {
+                //         window.location = '#/other'
+                //     }
+                // },
                 {
-                    type: 'other_shirt',
-                    color: '#ffffff',
-                    colorhover: '#ffffff',
-                    location: () => {
-                        window.location = '#/other'
-                    }
+                    type: 'github',
+                    color: '#8867b8',
+                    colorhover: '#e1e1e1',
+                    location: 'https://r.kate.pet/github'
                 },
                 {
                     type: 'kofi_s_tag_dark',
