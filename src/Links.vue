@@ -50,10 +50,6 @@ export default {
                     text: '@kate.pet'
                 },
                 {
-                    label: 'Matrix',
-                    text: '@ktwrd:catgirl.cloud'
-                },
-                {
                     label: 'Blog',
                     link: 'https://b.kate.pet'
                 },
