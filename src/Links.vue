@@ -65,10 +65,10 @@ export default {
                     label: 'Pronouns',
                     link: 'https://r.kate.pet/pronouns'
                 },
-                {
-                    label: 'Revolt Server',
-                    link: 'https://r.kate.pet/revolt'
-                },
+                // {
+                //     label: 'Revolt Server',
+                //     link: 'https://r.kate.pet/revolt'
+                // },
                 {
                     label: 'Discord Server',
                     link: 'https://r.kate.pet/discord'
