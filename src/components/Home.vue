@@ -262,10 +262,10 @@ export default {
                 //     type: 'revolt',
                 //     location: 'https://r.kate.pet/revolt'
                 // },
-                // {
-                //     type: 'xenia_bot',
-                //     location: 'https://r.kate.pet/xeniainvite'
-                // },
+                {
+                    type: 'xenia_bot',
+                    location: 'https://xenia.kate.pet'
+                },
                 // {
                 //     type: 'twitter',
                 //     color: '#1DA1F2',
