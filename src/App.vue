@@ -16,9 +16,9 @@
                 <a href="#/links">
                     <img src="/static/btn-links.png" class="fixed-btn" alt="various links" v-bind:current="$route.path == '/links'" />
                 </a>
-                <a href="#/other">
+                <!-- <a href="#/other">
                     <img src="/static/btn-other.png" class="fixed-btn" alt="other stuff" v-bind:current="$route.path == '/other'" />
-                </a>
+                </a> -->
             </div>
             <landing-page ref="landingPage" />
             <div class="routerView"><router-view/></div>
