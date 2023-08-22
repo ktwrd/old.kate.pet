@@ -6,7 +6,7 @@
 .github-fork-ribbon {
   width: 12.1em;
   height: 12.1em;
-  position: absolute;
+  position: fixed;
   overflow: hidden;
   top: 0;
   right: 0;
