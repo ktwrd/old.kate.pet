@@ -10,6 +10,9 @@
                 <a href="#/settings">
                     <img src="/static/btn-settings.png" class="fixed-btn" alt="settings" v-bind:current="$route.path == '/settings'" />
                 </a>
+                <a href="#/portfolio">
+                    <img src="/static/btn-portfolio.png" class="fixed-btn" alt="portfolio" v-bind:current="$route.path == '/portfolio'" />
+                </a>
                 <a href="#/links">
                     <img src="/static/btn-links.png" class="fixed-btn" alt="various links" v-bind:current="$route.path == '/links'" />
                 </a>

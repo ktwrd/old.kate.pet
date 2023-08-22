@@ -6,6 +6,7 @@ import TrackCredits from '@/TrackCredits.vue';
 import Since from '@/Since.vue';
 import Settings from '@/Settings.vue';
 import Links from '@/Links.vue';
+import Portfolio from '@/pages/Portfolio.vue';
 
 Vue.use(Router);
 
@@ -45,6 +46,11 @@ export default new Router({
             path: '/links',
             name: 'Links',
             component: Links
+        },
+        {
+            path: '/portfolio',
+            name: 'Portfolio',
+            component: Portfolio
         }
     ]
 });
