@@ -1,6 +1,7 @@
 <template>
     <div role="portfolio">
         <div class="container">
+            <strong>note:</strong> this <i>isn't a full/complete list</i> of all projects i've contributed to, it's a truncated list of the things i'm actually proud of.
             <b-row class="d-flex flex-row">
                 <b-col cols="auto" class="m-1">
                     <div class="card card-classic">
@@ -121,6 +122,9 @@
     </div>
 </template>
 <style>
+.container {
+    color: white;
+}
 .card-classic {
     background: black;
     border: 1px solid white;
