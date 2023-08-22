@@ -5,7 +5,7 @@
             <meta name="viewport" content="width=device-width, initial-scale=1">
             <div class="toolbar-top">
                 <a href="#/">
-                    <img src="/static/btn-home.png" class="fixed-btn" alt="homepage" v-bind:current="$route.path == '/settings'" />
+                    <img src="/static/btn-home.png" class="fixed-btn" alt="homepage" v-bind:current="$route.path == '/'" />
                 </a>
                 <a href="#/settings">
                     <img src="/static/btn-settings.png" class="fixed-btn" alt="settings" v-bind:current="$route.path == '/settings'" />
