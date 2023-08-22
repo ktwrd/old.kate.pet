@@ -37,8 +37,8 @@ export default {
         return {
             items: [
                 {
-                    label: 'Plemora',
-                    link: 'https://r.kate.pet/social'
+                    label: 'Fedi (Pleroma)',
+                    link: 'https://xenia.social/kate'
                 },
                 {
                     label: 'Lemmy',
@@ -46,7 +46,7 @@ export default {
                 },
                 {
                     label: 'Bluesky',
-                    link: 'https://r.kate.pet/bluesky',
+                    link: 'https://bsky.app/profile/kate.pet',
                     text: '@kate.pet'
                 },
                 {
@@ -77,18 +77,18 @@ export default {
                     label: 'Github',
                     link: 'https://r.kate.pet/github'
                 },
-                {
-                    label: 'Gitlab',
-                    link: 'https://gitlab.com/ktwrd'
-                },
+                // {
+                //     label: 'Gitlab',
+                //     link: 'https://gitlab.com/ktwrd'
+                // },
                 {
                     label: 'Last.fm',
                     link: 'https://r.kate.pet/lastfm'
                 },
-                {
-                    label: 'Stackshare',
-                    link: 'https://r.kate.pet/stackshare'
-                },
+                // {
+                //     label: 'Stackshare',
+                //     link: 'https://r.kate.pet/stackshare'
+                // },
                 {
                     label: 'Steam',
                     link: 'https://r.kate.pet/steam'
