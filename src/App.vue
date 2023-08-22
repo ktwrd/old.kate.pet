@@ -84,9 +84,11 @@ body {
 }
 
 [notMainView=yes] .routerView {
-    margin-top: 10rem;
+    margin-top: 3rem;
+    transition: 0ms;
 }
 [notMainView=no] .routerView {
     margin-top: 7rem;
+    transition: 0ms;
 }
 </style>
