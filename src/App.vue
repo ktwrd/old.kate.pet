@@ -88,7 +88,9 @@ body {
 
 [notMainView=yes] .routerView {
     margin-top: 10rem;
+    padding-bottom: 20rem;
     transition: 0ms;
+    overflow-x: hidden;
 }
 [notMainView=no] .routerView {
     margin-top: 7rem;
