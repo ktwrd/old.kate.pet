@@ -41,6 +41,28 @@
                 <b-col cols="auto" class="m-1">
                     <div class="card card-classic">
                         <div class="card-header">
+                            Custom DRM and Copy Protection
+                            <div class="card-header-sm">
+                                May 2023 - Aug 2023
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <strong>Unable to demo or explain in details due to this<br/>
+                            being work at a previous employer.</strong><br/>
+                            <br/>
+                            Custom DRM and Copy Protection written with;<br/>
+                            <ul>
+                                <li>Rust (Container for encrypted application,<br/>
+                                and FileMaker Plugin with <a href="https://github.com/mutantcows/rust_fm_plugin/">fm_plugin</a> crate)</li>
+                                <li>C# (.NET 8 AoT for license file generation)</li>
+                                <li>FileMaker Pro/Server 19 (Database and License Management)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </b-col>
+                <b-col cols="auto" class="m-1">
+                    <div class="card card-classic">
+                        <div class="card-header">
                             SixGrid (<a href="https://sixgrid.kate.pet">website</a>, <a href="https://github.com/sixgrid">github</a>)
                             <div class="card-header-sm">
                                 Dec 2020 - Current
