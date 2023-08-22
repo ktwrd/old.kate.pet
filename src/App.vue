@@ -3,19 +3,46 @@
         <div id="app" v-bind:notMainView="$route.name != 'blank' ? 'yes' : 'no'">
             <link rel="icon" href="/static/favicon.png" type="image/png" />
             <meta name="viewport" content="width=device-width, initial-scale=1">
-            <div style="position:fixed; top: 0;left:0;">
-                <b-button-group variant="outline-secondary">
-                    <b-button variant="outline-secondary" style="border-top-left-radius: 0; border-bottom-left-radius: 0;" size="sm" href="#/">Home</b-button>
-                    <b-button variant="outline-secondary" style="border-radius:none" size="sm" to="/settings">Settings</b-button>
-                    <b-button variant="outline-secondary" style="border-radius:none" size="sm" to="/links">Links</b-button>
-                    <b-button variant="outline-secondary" style="border-top-right-radius:0;" size="sm" to="/other">Other</b-button>
-                </b-button-group>
+            <div class="toolbar-top">
+                <a href="#/">
+                    <img src="/static/btn-home.png" class="fixed-btn" alt="homepage" v-bind:current="$route.path == '/settings'" />
+                </a>
+                <a href="#/settings">
+                    <img src="/static/btn-settings.png" class="fixed-btn" alt="settings" v-bind:current="$route.path == '/settings'" />
+                </a>
+                <a href="#/links">
+                    <img src="/static/btn-links.png" class="fixed-btn" alt="various links" v-bind:current="$route.path == '/links'" />
+                </a>
+                <a href="#/other">
+                    <img src="/static/btn-other.png" class="fixed-btn" alt="other stuff" v-bind:current="$route.path == '/other'" />
+                </a>
             </div>
             <landing-page ref="landingPage" />
             <div class="routerView"><router-view/></div>
         </div>
     </div>
 </template>
+<style>
+.toolbar-top {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    padding: 4px 2px;
+    background: rgba(0,0,0, 0.75);
+}
+.fixed-btn {
+    height: 32;
+    border: 1px solid white;
+    padding-right: 2px;
+}
+.fixed-btn:hover {
+    border-color: red;
+}
+.fixed-btn[current] {
+    border: 1px solid #036ffc;
+}
+</style>
 <script>
 import LandingPage from './LandingPage.vue'
 import HeaderIcon from './components/HeaderIcon.vue';
