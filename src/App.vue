@@ -76,7 +76,7 @@ img {
 }
 body {
     background-color: black;
-    overflow-y: hidden;
+    overflow-x: hidden;
 }
 #app {
     font-family: 'Avenir', Helvetica, Arial, sans-serif;
@@ -87,7 +87,7 @@ body {
 }
 
 [notMainView=yes] .routerView {
-    margin-top: 3rem;
+    margin-top: 10rem;
     transition: 0ms;
 }
 [notMainView=no] .routerView {
