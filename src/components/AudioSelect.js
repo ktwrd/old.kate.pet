@@ -238,6 +238,16 @@ const data = [
         link: 'https://www.youtube.com/watch?v=8jL2DPylmhE',
         name: 'deadmau5 - Seeya',
         url: 'https://res.kate.pet/upload/37571f9bc868/deadmau5_seeya.mp3'
+    },
+    {
+        link: 'https://www.youtube.com/watch?v=zK1mLIeXwsQ',
+        name: 'deadmau5 - I Remember',
+        url: 'https://res.kate.pet/upload/e3bc6d4a5fb5/deadmau5_iremember.mp3'
+    },
+    {
+        link: 'https://www.youtube.com/watch?v=-J-ZjhJDsMs',
+        name: 'deadmau5 - Edit your Friends',
+        url: 'https://res.kate.pet/upload/4a6fc1dc58dc/12%20-%20Deadmau5%20-%20Edit%20Your%20Friends.mp3'
     }
 ];
 
