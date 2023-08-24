@@ -41,26 +41,9 @@
                         <img ref="btn_NewSong"
                             class="winamp-next"
                             @click="SelectNewRandomAudio()" />
-                        <b-button-group>
-                            <!-- <b-button
-                                size="sm"
-                                ref="btn_PlayPause"
-                                type="button"
-                                @click="ToggleAudio">
-
-                                {{ IsPlaying() ? 'Pause' : 'Play' }}
-
-                            </b-button>
-                            <b-button
-                                size="sm"
-                                ref="btn_NewSong"
-                                @click="SelectNewRandomAudio()">
-                                New Song
-                            </b-button> -->
-                            <b-button
-                                size="sm"
-                                to="/track-credits">Track Credits</b-button>
-                        </b-button-group>
+                        <b-button
+                            size="sm"
+                            to="/track-credits">Track Credits</b-button>
                     </b-col>
                 </b-row>
                 <b-row>
@@ -123,6 +106,7 @@
     background-repeat: no-repeat;
     background-size:cover;
     border: 0;
+    cursor: pointer;
 }
 .winamp-pausebtn {
     background-image: url("/static/player_assets/pause_default.png");
@@ -330,6 +314,7 @@ export default {
                 this.$refs.vis.playpause();
             }
             this.$set(this.$data, 'audioObject', obj);
+            console.debug(this.audioObject)
             this.$set(this.$data, 'audioURL', this.$data.audioObject.url);
             await this.$refs.vis.loadAudioFromURL(this.$data.audioURL);
             this.ChangeAudioValue(this.$data.volume);

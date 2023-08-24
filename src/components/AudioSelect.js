@@ -233,6 +233,11 @@ const data = [
         link: 'https://www.youtube.com/watch?v=GztyGZV1gIc',
         name: 'Sewerslvt - the last thing she sent me',
         file: 'sewerslvt-thelastthingshesentme.mp3'
+    },
+    {
+        link: 'https://www.youtube.com/watch?v=8jL2DPylmhE',
+        name: 'deadmau5 - Seeya',
+        url: 'https://res.kate.pet/upload/37571f9bc868/deadmau5_seeya.mp3'
     }
 ];
 
@@ -240,7 +245,10 @@ module.exports = {
     data,
     select: () => {
         let target = data[Math.floor(Math.random() * data.length)];
-        target.url = `https://res.kate.pet/pageaudio/${target.file}`;
+        if (target.url == undefined) {
+            target.url = `https://res.kate.pet/pageaudio/${target.file}`;
+        }
+        console.debug(target)
         return target;
     }
 };

@@ -64,10 +64,11 @@ export default {
             this.$root.$children[0].$refs.landingPage.$refs.home.ClearSelection();
             this.$root.$children[0].$refs.landingPage.$refs.home.$delete(this.$root.$children[0].$refs.landingPage.$refs.home.$children, 0);
             this.$root.$children[0].$refs.landingPage.$refs.home.$refs.vis.kill();
-            await this.$root.$children[0].$refs.landingPage.$refs.home.SetAudio({
-                ...track,
-                url: `https://res.kate.pet/pageaudio/${track.file}`
-            })
+            let d = {...track};
+            if (d.url == undefined) {
+                d.url = `https://res.kate.pet/pageaudio/${track.file}`;
+            }
+            await this.$root.$children[0].$refs.landingPage.$refs.home.SetAudio(d)
             this.$root.$children[0].$refs.landingPage.$refs.home.ToggleAudio();
         }
     }
