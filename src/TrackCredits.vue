@@ -37,14 +37,6 @@
     width: fit-content;
 }
 </style>
-<style scoped>
-.container {
-    height: calc(100vh - 15rem);
-    padding-top: 1rem;
-    padding-bottom: 3rem;
-    overflow: auto;
-}
-</style>
 <script>
 export default {
     name: 'TrackCredits',
