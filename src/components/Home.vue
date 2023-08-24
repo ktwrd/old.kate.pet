@@ -35,8 +35,14 @@
                 </b-row>
                 <b-row>
                     <b-col v-bind:playing="IsPlaying()">
+                        <img ref="btn_PlayPause"
+                            v-bind:class="IsPlaying() ? 'winamp-pausebtn' : 'winamp-playbtn'"
+                            @click="ToggleAudio" />
+                        <img ref="btn_NewSong"
+                            class="winamp-next"
+                            @click="SelectNewRandomAudio()" />
                         <b-button-group>
-                            <b-button
+                            <!-- <b-button
                                 size="sm"
                                 ref="btn_PlayPause"
                                 type="button"
@@ -50,7 +56,7 @@
                                 ref="btn_NewSong"
                                 @click="SelectNewRandomAudio()">
                                 New Song
-                            </b-button>
+                            </b-button> -->
                             <b-button
                                 size="sm"
                                 to="/track-credits">Track Credits</b-button>
@@ -83,9 +89,62 @@
                 </b-tab>
             </template>
         </b-tabs> -->
+
+        <!-- preload images for media control -->
+        <div style="display: none; position: absolute">
+            <img src="/static/player_assets/play_default.png" />
+            <img src="/static/player_assets/play_hover.png" />
+            <img src="/static/player_assets/play_click.png" />
+            <img src="/static/player_assets/pause_default.png" />
+            <img src="/static/player_assets/pause_hover.png" />
+            <img src="/static/player_assets/hover_click.png" />
+            <img src="/static/player_assets/skip_default.png" />
+            <img src="/static/player_assets/skip_hover.png" />
+            <img src="/static/player_assets/skip_click.png" />
+        </div>
     </div>
 </template>
 <style>
+.winamp-playbtn {
+    background-image: url("/static/player_assets/play_default.png");
+}
+.winamp-playbtn:hover {
+    background-image: url("/static/player_assets/play_hover.png");
+}
+.winamp-playbtn:active,
+.winamp-playbtn:disabled {
+    background-image: url("/static/player_assets/play_click.png");
+}
+.winamp-pausebtn,
+.winamp-playbtn,
+.winamp-next {
+    width: 40px;
+    height: 34px;
+    background-repeat: no-repeat;
+    background-size:cover;
+    border: 0;
+}
+.winamp-pausebtn {
+    background-image: url("/static/player_assets/pause_default.png");
+}
+.winamp-pausebtn:hover {
+    background-image: url("/static/player_assets/pause_hover.png");
+}
+.winamp-pausebtn:active,
+.winamp-pausebtn:disabled {
+    background-image: url("/static/player_assets/pause_click.png");
+}
+.winamp-next {
+    background-image: url("/static/player_assets/skip_default.png");
+}
+.winamp-next:hover {
+    background-image: url("/static/player_assets/skip_hover.png");
+}
+.winamp-next:active,
+.winamp-next:disabled {
+    background-image: url("/static/player_assets/skip_click.png");
+}
+
 .visualizerControls[notMainView=yes] {
     top: 2rem;
     position: absolute;
