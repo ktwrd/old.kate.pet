@@ -72,19 +72,6 @@
                 </b-tab>
             </template>
         </b-tabs> -->
-
-        <!-- preload images for media control -->
-        <div style="display: none; position: absolute">
-            <img src="/static/player_assets/play_default.png" />
-            <img src="/static/player_assets/play_hover.png" />
-            <img src="/static/player_assets/play_click.png" />
-            <img src="/static/player_assets/pause_default.png" />
-            <img src="/static/player_assets/pause_hover.png" />
-            <img src="/static/player_assets/hover_click.png" />
-            <img src="/static/player_assets/skip_default.png" />
-            <img src="/static/player_assets/skip_hover.png" />
-            <img src="/static/player_assets/skip_click.png" />
-        </div>
     </div>
 </template>
 <style>
