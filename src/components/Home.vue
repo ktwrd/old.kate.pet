@@ -88,46 +88,6 @@
     </div>
 </template>
 <style>
-.winamp-playbtn {
-    background-image: url("/static/player_assets/play_default.png");
-}
-.winamp-playbtn:hover {
-    background-image: url("/static/player_assets/play_hover.png");
-}
-.winamp-playbtn:active,
-.winamp-playbtn:disabled {
-    background-image: url("/static/player_assets/play_click.png");
-}
-.winamp-pausebtn,
-.winamp-playbtn,
-.winamp-next {
-    width: 40px;
-    height: 34px;
-    background-repeat: no-repeat;
-    background-size:cover;
-    border: 0;
-    cursor: pointer;
-}
-.winamp-pausebtn {
-    background-image: url("/static/player_assets/pause_default.png");
-}
-.winamp-pausebtn:hover {
-    background-image: url("/static/player_assets/pause_hover.png");
-}
-.winamp-pausebtn:active,
-.winamp-pausebtn:disabled {
-    background-image: url("/static/player_assets/pause_click.png");
-}
-.winamp-next {
-    background-image: url("/static/player_assets/skip_default.png");
-}
-.winamp-next:hover {
-    background-image: url("/static/player_assets/skip_hover.png");
-}
-.winamp-next:active,
-.winamp-next:disabled {
-    background-image: url("/static/player_assets/skip_click.png");
-}
 
 .visualizerControls[notMainView=yes] {
     top: 2rem;
