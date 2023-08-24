@@ -89,11 +89,11 @@ const data = [
         name: `Etherwood - Give It Up`,
         file: `give_it_up.mp3`
     },
-    {
-        link: `https://www.youtube.com/watch?v=RiuiI1lxBNM`,
-        name: `S.P.Y - Step & Flow (VIP)`,
-        file: `step_and_flow.mp3`
-    },
+    // {
+    //     link: `https://www.youtube.com/watch?v=RiuiI1lxBNM`,
+    //     name: `S.P.Y - Step & Flow (VIP)`,
+    //     file: `step_and_flow.mp3`
+    // },
     {
         link: `https://www.youtube.com/watch?v=riHQtKStE-U`,
         name: `nu:tone - Do It Right`,
@@ -134,11 +134,11 @@ const data = [
     //     name: `t+pazolite - Electric Butterfly`,
     //     file: `tpazolite-electric_butterfly.mp3`
     // },
-    {
-        link: `https://www.last.fm/music/Lzie/_/Don%27t+Go+Floor`,
-        name: `Lzie - Don't Go Floor`,
-        file: `lzie-dontgofloor.mp3`
-    },
+    // {
+    //     link: `https://www.last.fm/music/Lzie/_/Don%27t+Go+Floor`,
+    //     name: `Lzie - Don't Go Floor`,
+    //     file: `lzie-dontgofloor.mp3`
+    // },
     {
         link: `https://www.youtube.com/watch?v=9fIlAsMREpg`,
         name: `The Queenstons - no more forever`,
@@ -154,16 +154,16 @@ const data = [
         name: `BoxPlot - Escape With the Clouds (V.I.P)`,
         file: `boxplot-escapewiththeclouds.mp3`
     },
-    {
-        link: `https://nivrad00.bandcamp.com/track/random-access-memory`,
-        name: `Niv - RANDOM ACCESS MEMORY`,
-        file: `niv-ram.mp3`
-    },
-    {
-        link: `https://www.youtube.com/watch?v=tpagsVWhU18`,
-        name: `Darius - Lakeshore West Line`,
-        file: `darius-lakeshorewestline.mp3`
-    },
+    // {
+    //     link: `https://nivrad00.bandcamp.com/track/random-access-memory`,
+    //     name: `Niv - RANDOM ACCESS MEMORY`,
+    //     file: `niv-ram.mp3`
+    // },
+    // {
+    //     link: `https://www.youtube.com/watch?v=tpagsVWhU18`,
+    //     name: `Darius - Lakeshore West Line`,
+    //     file: `darius-lakeshorewestline.mp3`
+    // },
     {
         link: `https://www.youtube.com/watch?v=DZjyDXN3HjY`,
         name: `Darius - exuviae`,
@@ -174,26 +174,26 @@ const data = [
         name: `Fox Stevenson - Good Time`,
         file: `foxstevenson-goodtime.mp3`
     },
-    {
-        link: `https://www.youtube.com/watch?v=Vh-9y9V9HVs`,
-        name: `TOKYOPILL - Triangles`,
-        file: `tokyopill-triangles.mp3`
-    },
+    // {
+    //     link: `https://www.youtube.com/watch?v=Vh-9y9V9HVs`,
+    //     name: `TOKYOPILL - Triangles`,
+    //     file: `tokyopill-triangles.mp3`
+    // },
     {
         link: `https://www.youtube.com/watch?v=wNShCHNCfUM`,
         name: `goreshit - fine night`,
         file: `goreshit-finenight.mp3`
     },
-    {
-        link: `https://www.youtube.com/watch?v=RgFaK6ZQifE`,
-        name: `Sewerslvt - Mr. Kill Myself`,
-        file: `sewerslvt-mrkillmyself.mp3`
-    },
-    {
-        link: `https://www.youtube.com/watch?v=jNsk8XsHikg`,
-        name: `furumoon - Kimi World`,
-        file: `furumoon-kimiworld.mp3`
-    },
+    // {
+    //     link: `https://www.youtube.com/watch?v=RgFaK6ZQifE`,
+    //     name: `Sewerslvt - Mr. Kill Myself`,
+    //     file: `sewerslvt-mrkillmyself.mp3`
+    // },
+    // {
+    //     link: `https://www.youtube.com/watch?v=jNsk8XsHikg`,
+    //     name: `furumoon - Kimi World`,
+    //     file: `furumoon-kimiworld.mp3`
+    // },
     {
         link: `https://www.youtube.com/watch?v=lgqBKPs9gjk`,
         name: `Darius - wishy washy`,
@@ -209,31 +209,31 @@ const data = [
         name: `piri & tommy - on & on`,
         file: `piri_onon.mp3`
     },
-    {
-        link: 'https://www.youtube.com/watch?v=xXC5RT106pw',
-        name: 'Sewerslvt - sick, twisted, demented',
-        file: 'sewerslvt-sick_twisted_demented.mp3'
-    },
-    {
-        link: 'https://www.youtube.com/watch?v=jF5DxpHZVVQ',
-        name: `TOKYOPILL - Let's All Love Lain`,
-        file: 'tokyopill-letsalllovelain.mp3'
-    },
-    {
-        link: 'https://www.youtube.com/watch?v=JKs--_lKYeo',
-        name: 'pisca - Is your online persona an untamed unfiltered version of yourself?',
-        file: 'pisca-iyopautvoy.mp3'
-    },
-    {
-        link: 'https://www.youtube.com/watch?v=fUY-oJB2YcQ',
-        name: 'Sewerslvt - Was It Weird I Listened To Im God By Clams Casino\'s When I Lost My Virginity',
-        file: 'sewerslvt-imgod.mp3'
-    },
-    {
-        link: 'https://www.youtube.com/watch?v=GztyGZV1gIc',
-        name: 'Sewerslvt - the last thing she sent me',
-        file: 'sewerslvt-thelastthingshesentme.mp3'
-    },
+    // {
+    //     link: 'https://www.youtube.com/watch?v=xXC5RT106pw',
+    //     name: 'Sewerslvt - sick, twisted, demented',
+    //     file: 'sewerslvt-sick_twisted_demented.mp3'
+    // },
+    // {
+    //     link: 'https://www.youtube.com/watch?v=jF5DxpHZVVQ',
+    //     name: `TOKYOPILL - Let's All Love Lain`,
+    //     file: 'tokyopill-letsalllovelain.mp3'
+    // },
+    // {
+    //     link: 'https://www.youtube.com/watch?v=JKs--_lKYeo',
+    //     name: 'pisca - Is your online persona an untamed unfiltered version of yourself?',
+    //     file: 'pisca-iyopautvoy.mp3'
+    // },
+    // {
+    //     link: 'https://www.youtube.com/watch?v=fUY-oJB2YcQ',
+    //     name: 'Sewerslvt - Was It Weird I Listened To Im God By Clams Casino\'s When I Lost My Virginity',
+    //     file: 'sewerslvt-imgod.mp3'
+    // },
+    // {
+    //     link: 'https://www.youtube.com/watch?v=GztyGZV1gIc',
+    //     name: 'Sewerslvt - the last thing she sent me',
+    //     file: 'sewerslvt-thelastthingshesentme.mp3'
+    // },
     {
         link: 'https://www.youtube.com/watch?v=8jL2DPylmhE',
         name: 'deadmau5 - Seeya',
