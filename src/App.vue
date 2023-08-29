@@ -2,22 +2,21 @@
     <div>
         <div id="app" v-bind:notMainView="$route.name != 'blank' ? 'yes' : 'no'">
             <link rel="icon" href="/static/favicon.png" type="image/png" />
-            <meta name="viewport" content="width=device-width, initial-scale=1">
             <div class="toolbar-top">
                 <a href="#/">
-                    <img src="/static/btn-home.png" class="fixed-btn" alt="homepage" v-bind:current="$route.path == '/'" />
+                    <img src="/static/btn-home.png" class="fixed-btn" alt="homepage" v-bind:current="$route.path == '/'" height="17" />
                 </a>
                 <a href="#/settings">
-                    <img src="/static/btn-settings.png" class="fixed-btn" alt="settings" v-bind:current="$route.path == '/settings'" />
+                    <img src="/static/btn-settings.png" class="fixed-btn" alt="settings" v-bind:current="$route.path == '/settings'" height="17" />
                 </a>
                 <a href="#/portfolio">
-                    <img src="/static/btn-portfolio.png" class="fixed-btn" alt="portfolio" v-bind:current="$route.path == '/portfolio'" />
+                    <img src="/static/btn-portfolio.png" class="fixed-btn" alt="portfolio" v-bind:current="$route.path == '/portfolio'" height="17" />
                 </a>
                 <a href="#/links">
-                    <img src="/static/btn-links.png" class="fixed-btn" alt="various links" v-bind:current="$route.path == '/links'" />
+                    <img src="/static/btn-links.png" class="fixed-btn" alt="various links" v-bind:current="$route.path == '/links'" height="17" />
                 </a>
                 <a href="#/track-credits">
-                    <img src="/static/btn-track-credits.png" class="fixed-btn" alt="track credits" v-bind:current="$route.path == '/track-credits'" />
+                    <img src="/static/btn-track-credits.png" class="fixed-btn" alt="track credits" v-bind:current="$route.path == '/track-credits'" height="17" />
                 </a>
                 <!-- <a href="#/other">
                     <img src="/static/btn-other.png" class="fixed-btn" alt="other stuff" v-bind:current="$route.path == '/other'" />

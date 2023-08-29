@@ -1,6 +1,5 @@
 <template>
     <div>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
         <template v-if="$route.name == 'blank'">
             <header-icon />
         </template>
@@ -13,7 +12,7 @@
                         <li v-bind:key="`eightButton-${index}`">
                             <template v-if="item[1] != undefined">
                                 <a :href="item[1]">
-                                    <img :src="item[0]" />
+                                    <img :src="item[0]" height="31"/>
                                 </a>
                             </template>
                             <template v-else>

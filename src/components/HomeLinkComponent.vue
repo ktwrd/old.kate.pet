@@ -1,5 +1,5 @@
 <template>
-    <div role="HomeLinkComponent">
+    <div>
         <template v-if="$route.path == '/'">
             <ul class="links">
                 <template v-for="link in PageLinks">
@@ -8,14 +8,16 @@
                             <img :src="`https://res.kate.pet/image/links/${link.type}.png`"
                                 @click="link.location"
                                 class="LinkTab"
-                                name="placeholder" />
+                                name="placeholder"
+                                height="71" />
                         </template>
                         <template v-else>
                             <img :src="`https://res.kate.pet/image/links/${link.type}.png`"
                                 @click="PageRedirect"
                                 :location="link.location"
                                 class="LinkTab"
-                                name="placeholder" />
+                                name="placeholder"
+                                height="71" />
                         </template>
                     </li>
                 </template>

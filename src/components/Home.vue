@@ -28,6 +28,7 @@
                             :value="volume"
                             @change="ChangeAudioValue"
                             ref="volume"
+                            label="Volume Slider"
                             style="vertical-align: middle;"/>
 
                         </div>
