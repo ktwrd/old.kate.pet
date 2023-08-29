@@ -58,6 +58,10 @@ export default {
                     link: 'https://r.kate.pet/twitter'
                 },
                 {
+                    label: '4chan',
+                    text: 'kate !!DI0PM78d0GV'
+                },
+                {
                     label: 'Email',
                     text: 'kate@dariox.club'
                 },
