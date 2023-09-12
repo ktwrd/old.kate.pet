@@ -153,6 +153,12 @@ export default {
                 }
             ]
         }
+    },
+    methods: {
+        PageRedirect (event) {
+            console.log(event);
+            window.location = event.target.attributes.location.value;
+        },
     }
 }
 </script>
