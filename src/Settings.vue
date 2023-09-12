@@ -11,7 +11,7 @@ input[type=checkbox],
 }
 </style>
 <script>
-import * as UserConfig from './UserConfig'
+import * as UserConfig from './userConfig'
 export default {
     name: 'SettingsPage',
     data () {

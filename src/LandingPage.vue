@@ -28,7 +28,7 @@
 <script>
 import Home from './components/Home.vue'
 import HeaderIcon from './components/HeaderIcon.vue'
-import * as UserConfig from './UserConfig'
+import * as UserConfig from './userConfig'
 export default {
     components: { Home, HeaderIcon },
     name: 'LandingPage',

@@ -13,7 +13,7 @@ canvas {
 import butterchurn from 'butterchurn';
 import isButterchurnSupported from 'butterchurn/lib/isSupported.min.js';
 import * as VisualizerPresets from './VisualizerPresets'
-import * as UserConfig from '../UserConfig'
+import * as UserConfig from '../userConfig'
 
 export default {
     name: 'Visualizer',

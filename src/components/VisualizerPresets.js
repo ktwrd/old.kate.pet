@@ -1,5 +1,5 @@
 import axios from 'axios'
-import * as UserConfig from '../UserConfig'
+import * as UserConfig from '../userConfig'
 export async function Fetch () {
     if (UserConfig.getBoolean('enableVisualizer')) {
         // Fetch visualizers

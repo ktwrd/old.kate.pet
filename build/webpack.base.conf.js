@@ -3,21 +3,11 @@ const path = require('path')
 const utils = require('./utils')
 const config = require('../config')
 const vueLoaderConfig = require('./vue-loader.conf')
+const esbuild = require('esbuild')
 
 function resolve (dir) {
     return path.join(__dirname, '..', dir)
 }
-
-const createLintingRule = () => ({
-    test: /\.(js|vue)$/,
-    loader: 'eslint-loader',
-    enforce: 'pre',
-    include: [resolve('src'), resolve('test')],
-    options: {
-        formatter: require('eslint-friendly-formatter'),
-        emitWarning: !config.dev.showEslintErrorsInOverlay
-    }
-})
 
 module.exports = {
     context: path.resolve(__dirname, '../'),
@@ -40,7 +30,6 @@ module.exports = {
     },
     module: {
         rules: [
-            ...(config.dev.useEslint ? [createLintingRule()] : []),
             {
                 test: /\.vue$/,
                 loader: 'vue-loader',
@@ -48,8 +37,21 @@ module.exports = {
             },
             {
                 test: /\.js$/,
-                loader: 'babel-loader',
-                include: [resolve('src'), resolve('test'), resolve('node_modules/webpack-dev-server/client')]
+                loader: 'esbuild-loader',
+                // include: [resolve('src'), resolve('test'), resolve('node_modules/webpack-dev-server/client')],
+                options: {
+                    // implementation: esbuild,
+                    loader: 'js',
+                    target: 'es2016'
+                }
+            },
+            {
+                test: /\.ts$/,
+                loader: 'esbuild-loader',
+                options: {
+                    loader: 'ts',
+                    target: 'es2016'
+                }
             },
             {
                 test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
