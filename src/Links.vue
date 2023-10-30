@@ -42,7 +42,7 @@ export default {
                 },
                 {
                     label: 'Lemmy',
-                    link: 'https://r.kate.pet/lemmy'
+                    link: 'https://lemmy.blahaj.zone/u/ktwrd'
                 },
                 {
                     label: 'Bluesky',
@@ -55,7 +55,7 @@ export default {
                 },
                 {
                     label: 'Twitter',
-                    link: 'https://r.kate.pet/twitter'
+                    link: 'https://twitter.com/seedvevo'
                 },
                 {
                     label: '4chan',
@@ -67,35 +67,23 @@ export default {
                 },
                 {
                     label: 'Pronouns',
-                    link: 'https://r.kate.pet/pronouns'
+                    link: 'https://en.pronouns.page/@seedvevo'
                 },
-                // {
-                //     label: 'Revolt Server',
-                //     link: 'https://r.kate.pet/revolt'
-                // },
                 {
                     label: 'Discord Server',
-                    link: 'https://r.kate.pet/discord'
+                    link: 'https://discord.gg/PMrqTQPZFE'
                 },
                 {
                     label: 'Github',
-                    link: 'https://r.kate.pet/github'
+                    link: 'https://github.com/ktwrd'
                 },
-                // {
-                //     label: 'Gitlab',
-                //     link: 'https://gitlab.com/ktwrd'
-                // },
                 {
                     label: 'Last.fm',
-                    link: 'https://r.kate.pet/lastfm'
+                    link: 'https://last.fm/user/seedvevo'
                 },
-                // {
-                //     label: 'Stackshare',
-                //     link: 'https://r.kate.pet/stackshare'
-                // },
                 {
                     label: 'Steam',
-                    link: 'https://r.kate.pet/steam'
+                    link: 'https://steamcommunity.com/id/kate_main'
                 }
             ]
         }
