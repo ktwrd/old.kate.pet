@@ -105,12 +105,8 @@ export default {
                     type: 'discord',
                     color: '#5865F2',
                     colorhover: '#e1e1e1',
-                    location: 'https://discord.gg/GPjpzRvpSp'
+                    location: 'https://discord.gg/PMrqTQPZFE'
                 },
-                // {
-                //     type: 'revolt',
-                //     location: 'https://r.kate.pet/revolt'
-                // },
                 {
                     type: 'xenia_bot',
                     location: 'https://xenia.kate.pet'
@@ -125,31 +121,23 @@ export default {
                     type: 'mastodon',
                     color: '',
                     colorhover: '',
-                    location: 'https://r.kate.pet/social'
+                    location: 'https://dariox.club/@kate'
                 },
                 {
                     type: 'bluesky',
-                    location: 'https://r.kate.pet/bluesky'
+                    location: 'https://bsky.app/profile/kate.pet'
                 },
-                // {
-                //     type: 'other_shirt',
-                //     color: '#ffffff',
-                //     colorhover: '#ffffff',
-                //     location: () => {
-                //         window.location = '#/other'
-                //     }
-                // },
                 {
                     type: 'github',
                     color: '#8867b8',
                     colorhover: '#e1e1e1',
-                    location: 'https://r.kate.pet/github'
+                    location: 'https://github.com/ktwrd'
                 },
                 {
                     type: 'kofi_s_tag_dark',
                     color: '#9d6538',
                     colorhover: '#e1e1e1',
-                    location: 'https://r.kate.pet/donate'
+                    location: 'https://ko-fi.com/ktwrd'
                 }
             ]
         }
