@@ -25,7 +25,7 @@
                 <b-col cols="auto" class="m-1">
                     <div class="card text-white bg-dark">
                         <div class="card-header">
-                            <a href="https://r.kate.pet/6grid">SixGrid</a>
+                            <a href="https://sixgrid.kate.pet">SixGrid</a>
                         </div>
                         <div class="card-body">
                             A Completely Free and Open Source Desktop Client for e926 and websites alike.<br>
